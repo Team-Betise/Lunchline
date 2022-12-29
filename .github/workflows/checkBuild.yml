@@ -6,5 +6,11 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'adopt'
       - name: Build the app
+        run: chmod +x ./HelloFigma/gradlew && ./HelloFigma/gradlew build
         run: ./HelloFigma/gradlew build
