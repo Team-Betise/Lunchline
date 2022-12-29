@@ -11,6 +11,7 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-      - name: Build the app
+      - name: Grant execute permission for gradlew
         run: chmod +x ./HelloFigma/gradlew && ./HelloFigma/gradlew build
+      - name: Build the app
         run: ./HelloFigma/gradlew build
