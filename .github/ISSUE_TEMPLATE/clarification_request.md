@@ -1,8 +1,8 @@
 ---
 name: Feature clarification
 about: Request clarification on particular userflow
-title: 'help-wanted'
-labels: ''
+title: ''
+labels: 'help-wanted'
 assignees: ''
 
 ---
