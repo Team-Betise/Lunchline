@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="successfullPaymentVM" type="com.betise_lunchline_client.app.modules.successfullpayment.data.viewmodel.SuccessfullPaymentVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearSuccessfullpay"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_900">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_gravity="start"
+            android:layout_height="@dimen/_20pxh"
+            android:layout_marginEnd="@dimen/_25pxh"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_25pxv"
+            android:layout_width="@dimen/_20pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+
+        <FrameLayout
+            android:id="@+id/frameStackpaymentsuccess"
+            android:layout_width="@dimen/_295pxh"
+            android:layout_height="346dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_25pxh"
+            android:layout_marginTop="@dimen/_78pxv"
+            android:layout_marginEnd="@dimen/_25pxh">
+
+            <TextView
+                android:id="@+id/txtPaymentSuccess"
+                style="@style/txtPoppinsmedium24"
+                android:layout_width="253dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginStart="@dimen/_38pxh"
+                android:layout_marginEnd="@dimen/_38pxh"
+                android:layout_marginBottom="@dimen/_10pxv"
+                android:ellipsize="end"
+                android:gravity="top|start"
+                android:singleLine="true"
+                android:text="@{successfullPaymentVM.successfullPaymentModel.txtPaymentSuccess}"
+                tools:text="@string/msg_payment_success" />
+
+            <TextView
+                android:id="@+id/txtLoremipsumis"
+                style="@style/txtPoppinsregular16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_marginTop="@dimen/_10pxv"
+                android:gravity="top|center"
+                android:lineSpacingExtra="@dimen/_4pxh"
+                android:text="@{successfullPaymentVM.successfullPaymentModel.txtLoremipsumis}"
+                tools:text="@string/msg_lorem_ipsum_is" />
+
+            <ImageView
+                android:id="@+id/imageImageOne"
+                imageRes="@{@drawable/img_image1_323x279}"
+                android:layout_width="@dimen/_279pxh"
+                android:layout_height="303dp"
+                android:layout_gravity="top|center"
+                android:layout_marginStart="@dimen/_8pxh"
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_marginEnd="@dimen/_8pxh"
+                android:layout_marginBottom="@dimen/_15pxv"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/img_image1_323x279" />
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnOkay"
+            style="@style/btnSolidRounded_1"
+            android:layout_width="@dimen/_234pxh"
+            android:layout_height="@dimen/_57pxv"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/_15pxh"
+            android:layout_marginTop="@dimen/_216pxv"
+            android:layout_marginEnd="@dimen/_25pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:paddingStart="@dimen/_30pxh"
+            android:paddingTop="@dimen/_18pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_10pxv"
+            android:singleLine="true"
+            android:text="@string/lbl_okay"
+            android:textAllCaps="false"
+            tools:text="@string/lbl_okay" />
+    </LinearLayout>
+</layout>

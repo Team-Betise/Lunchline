@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="splashVM" type="com.vartikasapplication.app.modules.splash.data.viewmodel.SplashVM"/>
+        <variable name="splashVM" type="com.betise_lunchline_client.app.modules.splash.data.viewmodel.SplashVM"/>
     </data>
-    <LinearLayout android:gravity="start" android:id="@+id/linearSplash"
+    <FrameLayout android:id="@+id/frameSplash"
         android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical" style="@style/groupStylegray_900">
-        <TextView android:ellipsize="end" android:id="@+id/txtWelcometo"
-            android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent" style="@style/groupStylewhite_A700">
+        <ImageView android:id="@+id/imageImageOne"
+            android:layout_gravity="start"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:scaleType="fitXY" imageRes="@{@drawable/img_image1}"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_image1"/>
+
+        <LinearLayout
+            android:id="@+id/linearColumnwelcometo"
+            android:layout_width="232dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_114pxh"
-            android:layout_marginStart="@dimen/_114pxh"
-            android:layout_marginTop="@dimen/_246pxv"
-            android:layout_width="wrap_content"
-            android:singleLine="true"
-            android:text="@{splashVM.splashModel.txtWelcometo}"
-            style="@style/txtInterregular18" tools:text="@string/lbl_welcome_to"/>
-        <ImageView android:id="@+id/imageLogo"
-            android:layout_gravity="end"
-            android:layout_height="@dimen/_269pxh"
-            android:layout_marginEnd="@dimen/_95pxh"
-            android:layout_marginStart="@dimen/_95pxh"
-            android:layout_marginTop="@dimen/_36pxv"
-            android:layout_width="@dimen/_181pxh"
-            android:scaleType="fitXY" android:src="@drawable/img_logo"
-            tools:ignore="ContentDescription" tools:src="@drawable/img_logo"/>
-        <TextView android:ellipsize="end" android:id="@+id/txtLunchLine"
-            android:layout_gravity="end"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_82pxh"
-            android:layout_marginStart="@dimen/_82pxh"
-            android:layout_marginTop="@dimen/_22pxv"
-            android:layout_width="wrap_content"
-            android:singleLine="true"
-            android:text="@{splashVM.splashModel.txtLunchLine}"
-            style="@style/txtHanumanbold36" tools:text="@string/lbl_lunch_line"/>
-    </LinearLayout>
+            android:layout_gravity="top|center"
+            android:layout_marginStart="@dimen/_98pxh"
+            android:layout_marginTop="@dimen/_319pxv"
+            android:layout_marginEnd="@dimen/_98pxh"
+            android:layout_marginBottom="@dimen/_319pxv"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtWelcometo"
+                style="@style/txtInterregular18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_46pxh"
+                android:layout_marginEnd="@dimen/_45pxh"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="@{splashVM.splashModel.txtWelcometo}"
+                tools:text="@string/lbl_welcome_to" />
+
+            <TextView
+                android:id="@+id/txtLunchLine"
+                style="@style/txtHanumanbold36"
+                android:layout_width="217dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22pxv"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:singleLine="true"
+                android:text="@{splashVM.splashModel.txtLunchLine}"
+                android:translationX="12dp"
+                tools:text="@string/lbl_lunch_line" />
+        </LinearLayout>
+    </FrameLayout>
 </layout>

@@ -16,7 +16,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.vartikasapplication.app"
+        applicationId "com.betise_lunchline_client.app"
         minSdkVersion 23
         targetSdkVersion 33
         versionCode 1

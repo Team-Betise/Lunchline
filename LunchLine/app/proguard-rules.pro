@@ -75,7 +75,7 @@
 
 
 # Add any classes the interact with gson
--keep class com.vartikasapplication.app.** { *; }
+-keep class com.betise_lunchline_client.app.** { *; }
 
 
 

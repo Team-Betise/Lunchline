@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="cartEmptyVM" type="com.betise_lunchline_client.app.modules.cartempty.data.viewmodel.CartEmptyVM"/>
+    </data>
+    <LinearLayout android:id="@+id/linearCartempty"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" style="@style/groupStylegray_900">
+        <ImageView android:id="@+id/imageArrowleft"
+            android:layout_height="@dimen/_20pxh"
+            android:layout_marginBottom="@dimen/_788pxv"
+            android:layout_marginStart="@dimen/_11pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_width="@dimen/_20pxh"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_arrowleft"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+
+        <LinearLayout
+            android:id="@+id/linearColumnyourcart"
+            android:layout_width="450dp"
+            android:layout_height="694dp"
+            android:layout_marginStart="@dimen/_69pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_marginEnd="@dimen/_100pxh"
+            android:layout_marginBottom="@dimen/_56pxv"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtYourCart"
+                style="@style/txtPoppinsmedium18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/_48pxh"
+                android:layout_marginEnd="@dimen/_48pxh"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="@{cartEmptyVM.cartEmptyModel.txtYourCart}"
+                tools:text="@string/lbl_your_cart" />
+
+            <TextView
+                android:id="@+id/txtCartisEmpty"
+                style="@style/txtPoppinsmedium18"
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_36pxh"
+                android:layout_marginTop="@dimen/_116pxv"
+                android:layout_marginEnd="@dimen/_36pxh"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:singleLine="true"
+                android:text="@{cartEmptyVM.cartEmptyModel.txtCartisEmpty}"
+                tools:text="@string/lbl_cart_is_empty" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAddSomethingOne"
+                style="@style/btnSolidRounded_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_552pxv"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_13pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_13pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_add_something"
+                android:textAllCaps="false"
+                tools:text="@string/lbl_add_something" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>
