@@ -22,80 +22,66 @@ import kotlin.String
 import kotlin.Unit
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
-  private val viewModel: LoginVM by viewModels<LoginVM>()
-  private val signInLauncher = registerForActivityResult(
-    FirebaseAuthUIActivityResultContract()
-  ) { res ->
-    this.onSignInResult(res)
-  }
-  val providers = arrayListOf(
-    AuthUI.IdpConfig.GoogleBuilder().build(),
-  )
-  val signInIntent = AuthUI.getInstance()
-    .createSignInIntentBuilder()
-    .setAvailableProviders(providers)
-    .setTheme(R.style.FuckingHell)
-    .build()
-
-  override fun onInitialized(): Unit {
-    viewModel.navArguments = intent.extras?.getBundle("bundle")
-    binding.loginVM = viewModel
-  }
-
-  override fun setUpClicks(): Unit {
-    binding.txtNewUserSign.setOnClickListener {
-      val destIntent = Signup1TwoActivity.getIntent(this, null)
-      startActivity(destIntent)
+    private val viewModel: LoginVM by viewModels<LoginVM>()
+    private val signInLauncher = registerForActivityResult(
+        FirebaseAuthUIActivityResultContract()
+    ) { res ->
+        this.onSignInResult(res)
     }
-    binding.txtLoginwithEmai.setOnClickListener{
-        signInLauncher.launch(signInIntent)
-        val destIntent = HomePageActivity.getIntent(this,null)
-      startActivity(destIntent)
-      }
-//          AuthUI.getInstance()
-//        .createSignInIntentBuilder()
-//        .setAvailableProviders(providers)
-//        .setTheme(R.style.FuckingHell)
-//        .build()
-//      startA?ctivity(destIntent)
+    val providers = arrayListOf(
+        AuthUI.IdpConfig.GoogleBuilder().build(),
+    )
+    val signInIntent = AuthUI.getInstance()
+        .createSignInIntentBuilder()
+        .setAvailableProviders(providers)
+        .setTheme(R.style.FuckingHell)
+        .build()
+
+    override fun onInitialized(): Unit {
+        viewModel.navArguments = intent.extras?.getBundle("bundle")
+        binding.loginVM = viewModel
+    }
+
+    override fun setUpClicks(): Unit {
+        binding.txtNewUserSign.setOnClickListener {
+            val destIntent = Signup1TwoActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+        binding.txtLoginwithEmai.setOnClickListener{
+            signInLauncher.launch(signInIntent)
+            val destIntent = HomePageActivity.getIntent(this,null)
+            startActivity(destIntent)
+        }
     }
 
 
-//    binding.linearGooglelogin.setOnClickListener {
-//      val destIntent = HomePageActivity.getIntent(this, null)
-//      AuthUI.getInstance()
-//        .createSignInIntentBuilder()
-//        .setAvailableProviders(providers)
-//        .setTheme(R.style.FuckingHell)
-//        .build()
-//      startActivity(destIntent)
-//    }
 
-  companion object {
-    const val TAG: String = "LOGIN_ACTIVITY"
+    private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
+        val response: IdpResponse? = result.idpResponse
+        if (result.resultCode == RESULT_OK) {
+            // Successfully signed in
+            val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
-
-    fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, LoginActivity::class.java)
-      destIntent.putExtra("bundle", bundle)
-      return destIntent
+        } else {
+            // Sign in failed. If response is null the user canceled the
+            // sign-in flow using the back button. Otherwise check
+            // response.getError().getErrorCode() and handle the error.
+            // ...
+            if (response != null) {
+                response.error?.errorCode
+            }
+        }
     }
-  }
-  private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
-    val response: IdpResponse? = result.idpResponse
-    if (result.resultCode == RESULT_OK) {
-      // Successfully signed in
-      val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
-    } else {
-      // Sign in failed. If response is null the user canceled the
-      // sign-in flow using the back button. Otherwise check
-      // response.getError().getErrorCode() and handle the error.
-      // ...
-      if (response != null) {
-        response.error?.errorCode
-      }
+    companion object {
+        const val TAG: String = "LOGIN_ACTIVITY"
+
+
+        fun getIntent(context: Context, bundle: Bundle?): Intent {
+            val destIntent = Intent(context, LoginActivity::class.java)
+            destIntent.putExtra("bundle", bundle)
+            return destIntent
+        }
     }
-  }
 }
 
