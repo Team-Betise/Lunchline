@@ -2,6 +2,7 @@ package com.betise_lunchline_vendor.app.modules.editpagetwo.ui
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
@@ -14,6 +15,10 @@ import com.betise_lunchline_vendor.app.modules.editpagetwo.`data`.viewmodel.Edit
 import kotlin.Boolean
 import kotlin.String
 import kotlin.Unit
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import android.widget.ToggleButton
+
 
 class EditPageTwoActivity :
     BaseActivity<ActivityEditPageTwoBinding>(R.layout.activity_edit_page_two) {
@@ -33,7 +38,27 @@ class EditPageTwoActivity :
       val destIntent =DishPageActivity.getIntent(this, null)
       startActivity(destIntent)
     }
+    val toggle:ToggleButton = findViewById(R.id.toggleButton)
+    if(toggle.isChecked){
+      toggle.setBackgroundColor(Color.parseColor("#00BA4A"))
+    }
+    else{
+      toggle.setBackgroundColor(Color.parseColor("#EB0000"))
+    }
+    toggle.setOnCheckedChangeListener { buttonView, isChecked ->
+      if (isChecked) {
+        Toast.makeText(this, "Toggle is on", Toast.LENGTH_SHORT).show()
+        toggle.setBackgroundColor(Color.parseColor("#00BA4A"))
+      }
+      else{
+        toggle.setBackgroundColor(Color.parseColor("#EB0000"))
+        Toast.makeText(this, "Toggle is off", Toast.LENGTH_SHORT).show()
+      }
+    }
   }
+
+
+
 
   private fun setUpSearchViewSearchbarListener(): Unit {
     binding.searchViewSearchbar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

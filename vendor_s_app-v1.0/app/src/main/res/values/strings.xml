@@ -52,7 +52,7 @@ item 3            x4</string>
 item 2
 item 3</string>
 <string name="lbl_11_11">11-11</string>
-<string name="msg_login_with_emai">Sign In With Google</string>
+<string name="msg_login_with_emai">Sign in with Google</string>
 <string name="lbl_delete">Delete</string>
 <string name="lbl_otp">OTP</string>
 <string name="lbl_x_2">x 2</string>
