@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="splashVM" type="com.betise_lunchline_kitchen.app.modules.splash.data.viewmodel.SplashVM"/>
+    </data>
+    <LinearLayout android:gravity="start" android:id="@+id/linearSplash"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_900">
+        <TextView android:ellipsize="end" android:id="@+id/txtWelcometo"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_114pxh"
+            android:layout_marginStart="@dimen/_114pxh"
+            android:layout_marginTop="@dimen/_246pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{splashVM.splashModel.txtWelcometo}"
+            style="@style/txtInterregular18" tools:text="@string/lbl_welcome_to"/>
+        <ImageView android:id="@+id/imageLogo"
+            android:layout_gravity="end"
+            android:layout_height="@dimen/_269pxh"
+            android:layout_marginEnd="@dimen/_95pxh"
+            android:layout_marginStart="@dimen/_95pxh"
+            android:layout_marginTop="@dimen/_36pxv"
+            android:layout_width="@dimen/_181pxh"
+            android:scaleType="fitXY" android:src="@drawable/img_logo"
+            tools:ignore="ContentDescription" tools:src="@drawable/img_logo"/>
+        <TextView android:ellipsize="end" android:id="@+id/txtLunchLine"
+            android:layout_gravity="end"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_82pxh"
+            android:layout_marginStart="@dimen/_82pxh"
+            android:layout_marginTop="@dimen/_22pxv"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:text="@{splashVM.splashModel.txtLunchLine}"
+            style="@style/txtHanumanbold36" tools:text="@string/lbl_lunch_line"/>
+    </LinearLayout>
+</layout>

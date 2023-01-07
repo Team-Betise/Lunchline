@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">vartika2401_s_application22</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+<string name="lbl_quantity">Quantity</string>
+<string name="lbl_ready_to_go">Ready to go</string>
+<string name="msg_lunch_line_kitc">Lunch Line Kitchen</string>
+<string name="msg_login_with_emai">Login with Email</string>
+<string name="lbl_search">Search</string>
+<string name="lbl_0">0</string>
+<string name="lbl_lunch_line">Lunch Line</string>
+<string name="lbl_dish_name">Dish Name</string>
+<string name="lbl_5">5</string>
+<string name="lbl_welcome_to">Welcome to</string>
+<string name="lbl_ready">Ready</string>
+</resources>
