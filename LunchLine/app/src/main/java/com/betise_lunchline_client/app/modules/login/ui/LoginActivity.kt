@@ -37,9 +37,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         .setTheme(R.style.FuckingHell)
         .build()
 
+    var user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         binding.loginVM = viewModel
+
+
     }
 
     override fun setUpClicks(): Unit {
@@ -48,9 +51,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             startActivity(destIntent)
         }
         binding.txtLoginwithEmai.setOnClickListener{
-            signInLauncher.launch(signInIntent)
-            val destIntent = HomePageActivity.getIntent(this,null)
-            startActivity(destIntent)
+            if (user != null) {
+                val destIntent = HomePageActivity.getIntent(this, null)
+                startActivity(destIntent)
+
+            } else {
+                signInLauncher.launch(signInIntent)
+                user = FirebaseAuth.getInstance().currentUser
+            }
+//            signInLauncher.launch(signInIntent)
+//            val destIntent = HomePageActivity.getIntent(this,null)
+//            startActivity(destIntent)
         }
     }
 
@@ -60,7 +71,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         val response: IdpResponse? = result.idpResponse
         if (result.resultCode == RESULT_OK) {
             // Successfully signed in
-            val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
+            user = FirebaseAuth.getInstance().currentUser
 
         } else {
             // Sign in failed. If response is null the user canceled the
