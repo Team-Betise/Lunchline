@@ -85,4 +85,5 @@ Shipping Charges
 <string name="msg_otp_for_your_or">OTP For your order</string>
 <string name="msg_and_be_aware_of"> and be aware of all the rules and tick the box if you accept the rules</string>
 <string name="msg_please_enter_valid_phone_nu">Please enter valid phone number</string>
+
 </resources>

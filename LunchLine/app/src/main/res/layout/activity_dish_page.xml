@@ -217,21 +217,26 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatButton
-            android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnAddToCart"
-            android:layout_gravity="center_horizontal"
+            style="@style/btnSolidRounded_1"
+            android:layout_width="@dimen/_234pxh"
             android:layout_height="@dimen/_57pxv"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_gravity="center_horizontal"
             android:layout_marginStart="@dimen/_30pxh"
             android:layout_marginTop="@dimen/_22pxv"
-            android:layout_width="@dimen/_234pxh"
-            android:paddingBottom="@dimen/_19pxv"
-            android:paddingEnd="@dimen/_30pxh"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:ellipsize="end"
+            android:gravity="center"
             android:paddingStart="@dimen/_30pxh"
-            android:paddingTop="@dimen/_19pxv" android:singleLine="true"
+            android:paddingTop="@dimen/_15pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_9pxv"
+            android:singleLine="true"
             android:text="@string/lbl_add_to_cart"
-            android:textAllCaps="false" style="@style/btnSolidRounded_1" tools:text="@string/lbl_add_to_cart"/>
+            android:textAllCaps="false"
+            tools:text="@string/lbl_add_to_cart" />
     </LinearLayout>
 </layout>
