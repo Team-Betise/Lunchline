@@ -118,32 +118,52 @@
                             android:text="@{addDishVM.addDishModel.txtEnterDishDesc}"
                             tools:text="@string/msg_enter_dish_desc" />
 
-                        <LinearLayout
-                            android:id="@+id/linearColumndescription"
-                            style="@style/groupStylegray_50cornerRadius"
+                        <EditText
+                            android:id="@+id/etDescription"
+                            style="@style/etSolidRounded"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_9pxh"
-                            android:layout_marginTop="@dimen/_16pxv"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:layout_marginTop="@dimen/_28pxv"
+                            android:background="@drawable/rectangle_bg_gray_50_radius_8"
+                            android:ellipsize="end"
+                            android:hint="@string/lbl_description"
+                            android:inputType="text"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:paddingStart="@dimen/_16pxh"
+                            android:paddingTop="@dimen/_19pxv"
+                            android:paddingEnd="@dimen/_30pxh"
+                            android:paddingBottom="@dimen/_19pxv"
+                            android:singleLine="true"
+                            android:text="@={addDishVM.addDishModel.etFrameTwoOneValue}"
+                            android:textColorHint="@color/gray_400"
+                            tools:ignore="Autofill" />
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/linearColumndescription"-->
+<!--                            style="@style/groupStylegray_50cornerRadius"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/_9pxh"-->
+<!--                            android:layout_marginTop="@dimen/_16pxv"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:id="@+id/txtDescription"
-                                style="@style/txtInterregular14"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/_16pxh"
-                                android:layout_marginTop="@dimen/_26pxv"
-                                android:layout_marginEnd="@dimen/_16pxh"
-                                android:layout_marginBottom="@dimen/_137pxv"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:lineSpacingExtra="@dimen/_1pxh"
-                                android:singleLine="true"
-                                android:text="@{addDishVM.addDishModel.txtDescription}"
-                                tools:text="@string/lbl_description" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtDescription"-->
+<!--                                style="@style/txtInterregular14"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginStart="@dimen/_16pxh"-->
+<!--                                android:layout_marginTop="@dimen/_26pxv"-->
+<!--                                android:layout_marginEnd="@dimen/_16pxh"-->
+<!--                                android:layout_marginBottom="@dimen/_137pxv"-->
+<!--                                android:ellipsize="end"-->
+<!--                                android:gravity="start"-->
+<!--                                android:lineSpacingExtra="@dimen/_1pxh"-->
+<!--                                android:singleLine="true"-->
+<!--                                android:text="@{addDishVM.addDishModel.txtDescription}"-->
+<!--                                tools:text="@string/lbl_description" />-->
+<!--                        </LinearLayout>-->
                     </LinearLayout>
 
                     <LinearLayout
@@ -172,7 +192,7 @@
                         <EditText
                             android:id="@+id/etFrameTwoOne"
                             style="@style/etSolidRounded"
-                            android:layout_width="match_parent"
+                            android:layout_width="195dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_9pxh"
                             android:layout_marginTop="@dimen/_21pxv"
@@ -560,7 +580,7 @@
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnHrsTwo"
                                 style="@style/btnSolidRounded_2"
-                                android:layout_width="@dimen/_50pxh"
+                                android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_53pxh"
                                 android:ellipsize="end"
                                 android:gravity="center"
@@ -577,7 +597,7 @@
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinTwo"
                                 style="@style/btnSolidRounded_2"
-                                android:layout_width="@dimen/_51pxh"
+                                android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_53pxh"
                                 android:layout_marginStart="@dimen/_13pxh"
                                 android:ellipsize="end"
