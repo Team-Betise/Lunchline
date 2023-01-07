@@ -1,38 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  Copyright 2022 Google LLC
-  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
-  in compliance with the License. You may obtain a copy of the License at
-  http://www.apache.org/licenses/LICENSE-2.0
-  Unless required by applicable law or agreed to in writing, software distributed under the License
-  is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
-  or implied. See the License for the specific language governing permissions and limitations under
-  the License.
-  -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.vartikasapplication.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.vartikasapplication.app.appcomponents.di.MyApp"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.HelloFigma"
-        tools:targetApi="31">
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.HelloFigma">
+            android:name="com.vartikasapplication.app.modules.vendorlogin.ui.VendorLoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.vednorsignup2two.ui.VednorSignup2TwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.adddish.ui.AddDishActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.vendorhome.ui.VendorHomeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.vendorprovidor.ui.VendorProvidorActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.editpagetwo.ui.EditPageTwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.editpagethree.ui.EditPageThreeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.editpageone.ui.EditPageOneActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.editpage.ui.EditPageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.vendorprovidorone.ui.VendorProvidorOneActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true"
+            android:name="com.vartikasapplication.app.modules.splash.ui.SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.vartikasapplication.app.modules.vednorsignup1two.ui.VednorSignup1TwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.vartikasapplication.app.modules.dishpage.ui.DishPageActivity" android:screenOrientation="portrait"/>
     </application>
-
 </manifest>

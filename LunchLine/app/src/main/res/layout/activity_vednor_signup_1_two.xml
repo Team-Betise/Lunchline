@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vednorSignup1TwoVM" type="com.vartikasapplication.app.modules.vednorsignup1two.data.viewmodel.VednorSignup1TwoVM"/>
+    </data>
+    <FrameLayout android:id="@+id/frameVednorsignup1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" style="@style/groupStylegray_901">
+        <LinearLayout android:id="@+id/linearColumnrectanglefifteen"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:layout_marginEnd="@dimen/_32pxh"
+            android:layout_marginStart="@dimen/_33pxh"
+            android:layout_marginTop="@dimen/_33pxv"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <LinearLayout android:gravity="end"
+                android:id="@+id/linearRowrectanglefifteen"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_44pxh"
+                android:layout_marginStart="@dimen/_44pxh"
+                android:layout_width="match_parent" android:orientation="horizontal">
+                <View android:background="@color/green_A701"
+                    android:id="@+id/viewRectangleFifteen"
+                    android:layout_height="@dimen/_2pxv" android:layout_width="@dimen/_104pxh"/>
+                <View
+                    android:background="@drawable/rectangle_border_gray_600"
+                    android:id="@+id/viewRectangleSixteen"
+                    android:layout_height="@dimen/_2pxv"
+                    android:layout_marginStart="@dimen/_12pxh" android:layout_width="@dimen/_104pxh"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearColumnname"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_1pxh"
+                android:layout_marginTop="@dimen/_144pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtName"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="@{vednorSignup1TwoVM.vednorSignup1TwoModel.txtName}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_name"/>
+                <EditText
+                    android:background="@drawable/rectangle_bg_gray_50_radius_8"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_exampel_1234"
+                    android:id="@+id/etFrameTwo"
+                    android:inputType="text"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_20pxv"
+                    android:layout_width="match_parent"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_16pxh"
+                    android:paddingTop="@dimen/_21pxv"
+                    android:singleLine="true"
+                    android:text="@={vednorSignup1TwoVM.vednorSignup1TwoModel.etFrameTwoValue}"
+                    android:textColorHint="@color/gray_400"
+                    style="@style/etSolidRounded" tools:ignore="Autofill"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearColumnphoneno"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25pxv"
+                android:layout_width="match_parent"
+                android:orientation="vertical" style="@style/groupStylecornerRadius">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtPhoneNo"
+                    android:layout_gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_width="wrap_content"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="@{vednorSignup1TwoVM.vednorSignup1TwoModel.txtPhoneNo}"
+                    style="@style/txtIntersemibold16" tools:text="@string/lbl_phone_no"/>
+                <EditText
+                    android:background="@drawable/rectangle_bg_gray_50_radius_8"
+                    android:ellipsize="end"
+                    android:hint="@string/lbl_1234567890"
+                    android:id="@+id/etMobileNo"
+                    android:inputType="phone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10pxh"
+                    android:layout_marginTop="@dimen/_20pxv"
+                    android:layout_width="match_parent"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:paddingBottom="@dimen/_19pxv"
+                    android:paddingEnd="@dimen/_30pxh"
+                    android:paddingStart="@dimen/_16pxh"
+                    android:paddingTop="@dimen/_19pxv"
+                    android:singleLine="true"
+                    android:text="@={vednorSignup1TwoVM.vednorSignup1TwoModel.etMobileNoValue}"
+                    android:textColorHint="@color/gray_400"
+                    style="@style/etSolidRounded" tools:ignore="Autofill"/>
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGetOtp"
+                style="@style/btnSolidRounded"
+                android:layout_width="@dimen/_234pxh"
+                android:layout_height="@dimen/_57pxv"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_25pxh"
+                android:layout_marginTop="@dimen/_126pxv"
+                android:layout_marginEnd="@dimen/_25pxh"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:paddingStart="@dimen/_30pxh"
+                android:paddingTop="@dimen/_19pxv"
+                android:paddingEnd="@dimen/_30pxh"
+                android:paddingBottom="@dimen/_9pxv"
+                android:singleLine="true"
+                android:text="@string/lbl_get_otp"
+                android:textAllCaps="false"
+                tools:text="@string/lbl_get_otp" />
+
+            <FrameLayout
+                android:id="@+id/frameStackvectorone"
+                style="@style/groupStylegreen_700cornerRadius"
+                android:layout_width="@dimen/_22pxh"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|start"
+                android:layout_marginStart="@dimen/_10pxh"
+                android:layout_marginEnd="@dimen/_70pxh"
+                android:layout_marginBottom="@dimen/_10pxv"
+                android:translationX="10dp"
+                android:translationY="48dp">
+
+                <ImageView
+                    android:id="@+id/imageVectorOne"
+                    android:layout_width="@dimen/_8pxh"
+                    android:layout_height="@dimen/_7pxh"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_6pxh"
+                    android:layout_marginTop="@dimen/_8pxv"
+                    android:layout_marginEnd="@dimen/_6pxh"
+                    android:layout_marginBottom="@dimen/_8pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_vector1"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_vector1" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frameStackreadtherules"
+                android:layout_width="307dp"
+                android:layout_height="81dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_25pxh"
+                android:layout_marginTop="@dimen/_1pxv"
+                android:layout_marginEnd="@dimen/_25pxh">
+
+                <TextView
+                    android:id="@+id/txtReadtheRules"
+                    style="@style/txtInterregular16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="63dp"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_17pxv"
+                    android:layout_marginEnd="@dimen/_18pxv"
+                    android:layout_marginBottom="@dimen/_90pxv"
+                    android:gravity="top|start"
+                    android:text="@{vednorSignup1TwoVM.vednorSignup1TwoModel.txtReadtheRules}"
+                    android:translationX="24dp"
+                    tools:text="@string/msg_read_the_rules" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtConfirmation"
+                style="@style/txtInterregular12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25pxh"
+                android:layout_marginTop="@dimen/_8pxv"
+                android:layout_marginEnd="@dimen/_25pxh"
+                android:ellipsize="end"
+                android:gravity="center_horizontal"
+                android:lineSpacingExtra="@dimen/_1pxh"
+                android:singleLine="true"
+                android:text="@{vednorSignup1TwoVM.vednorSignup1TwoModel.txtConfirmation}"
+                tools:text="@string/msg_do_you_have_an" />
+        </LinearLayout>
+    </FrameLayout>
+</layout>
