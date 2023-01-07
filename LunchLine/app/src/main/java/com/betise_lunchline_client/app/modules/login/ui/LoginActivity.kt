@@ -70,13 +70,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         val response: IdpResponse? = result.idpResponse
         if (result.resultCode == RESULT_OK) {
             // Successfully signed in
-            data class User(
-                val Name: String,
-                val Photo: String,
-                val Phone: String,
-                val Profile: String,
-                val OpenID: String,
-            )
             user = FirebaseAuth.getInstance().currentUser
             user?.let {
                 // Name, email address, and profile photo Url
@@ -98,7 +91,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                         if(document!!.exists()){
                             Log.d(TAG, "DocumentSnapshot data: ${document.data}")
                         }else{
-                            val user = User(name.toString(), photoUrl.toString(), "", "", "")
+                            val user = SharedObjects.User(name.toString(), email.toString(), photoUrl.toString(), "", "", "")
                             SharedObjects.db.collection("users")
                                 .document(email!!).set(user)
                                 .addOnSuccessListener {
