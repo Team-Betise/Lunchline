@@ -15,18 +15,12 @@ jobs:
       - name: Grant execute permission for gradle build
         working-directory: ./LunchLine
         run: chmod +x ./gradlew
+      - name: Grant execute permission for gradle build
+        working-directory: ./vendor_s_app-v1.0
+        run: chmod +x ./gradlew
       - name: Build the Client app
         working-directory: ./LunchLine
         run: ./gradlew build --no-daemon
-      - name: Grant execute permission for gradle build
-        working-directory: ./vendor_s_app-v1.0
-        run: chmod +x ./gradlew
       - name: Build the Vendor app
         working-directory: ./vendor_s_app-v1.0
-        run: ./gradlew build --no-daemon
-      - name: Grant execute permission for gradle build
-        working-directory: ./"Kitchen App"
-        run: chmod +x ./gradlew
-      - name: Build the kitchen app
-        working-directory: ./"Kitchen App"
         run: ./gradlew build --no-daemon
