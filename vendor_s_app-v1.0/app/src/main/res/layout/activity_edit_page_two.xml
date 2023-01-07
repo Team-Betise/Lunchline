@@ -74,33 +74,32 @@
 
                     <LinearLayout
                         android:id="@+id/linearRowdishname"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_9pxh"
                         android:layout_marginTop="@dimen/_5pxv"
-                        android:layout_marginEnd="@dimen/_19pxh"
+                        android:layout_width="match_parent"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/txtDishName"
                             style="@style/txtIntersemibold18"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_28pxv"
+                            android:layout_width="150dp"
+                            android:layout_height="38dp"
+                            android:layout_marginBottom="@dimen/_20pxv"
                             android:layout_weight="0.49"
                             android:ellipsize="end"
                             android:singleLine="true"
                             android:text="@{editPageTwoVM.editPageTwoModel.txtDishName}"
                             tools:text="@string/lbl_dish_name" />
 
-
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnAdd"
                             style="@style/btnSolidRounded_1"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:layout_marginStart="@dimen/_79pxh"
+                            android:layout_marginStart="@dimen/_1pxh"
                             android:layout_marginTop="@dimen/_11pxv"
+                            android:layout_marginEnd="@dimen/_30pxh"
                             android:ellipsize="end"
                             android:gravity="center"
                             android:paddingStart="@dimen/_30pxh"
@@ -113,14 +112,35 @@
                             tools:text="@string/lbl_add" />
                     </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/linearToggleDel"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton"
+                        android:layout_width="@dimen/_120pxh"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_38pxv"
+                        android:layout_marginTop="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_25pxv"
+                        android:layout_marginBottom="@dimen/_8pxv"
+                        android:textOff="Unavailable"
+                        android:textOn="Available"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnDelete"
                         style="@style/btnSolidRoundedOutline"
                         android:layout_width="wrap_content"
-                        android:layout_height="@dimen/_35pxv"
-                        android:layout_marginStart="@dimen/_79pxh"
+                        android:layout_height="@dimen/_45pxv"
+                        android:layout_marginStart="@dimen/_30pxh"
                         android:layout_marginTop="@dimen/_11pxv"
-                        android:layout_marginEnd="@dimen/_13pxh"
+                        android:layout_marginEnd="@dimen/_10pxh"
                         android:layout_marginBottom="@dimen/_8pxv"
                         android:ellipsize="end"
                         android:gravity="center"
@@ -133,18 +153,7 @@
                         android:textAllCaps="false"
                         tools:text="@string/lbl_delete" />
 
-                    <ToggleButton
-                        android:id="@+id/toggleButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_49pxv"
-                        android:layout_marginTop="@dimen/_11pxv"
-                        android:layout_marginEnd="@dimen/_250pxv"
-                        android:layout_marginBottom="@dimen/_8pxv"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
                 </LinearLayout>
                 <ImageView android:id="@+id/imageImageFourOne"
                     android:layout_height="@dimen/_144pxh"

@@ -75,7 +75,7 @@
                 <TextView
                     android:id="@+id/txtLoginwithEmai"
                     style="@style/txtInterregular18_2"
-                    android:layout_width="80dp"
+                    android:layout_width="221dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_24pxh"
                     android:layout_marginTop="@dimen/_8pxv"

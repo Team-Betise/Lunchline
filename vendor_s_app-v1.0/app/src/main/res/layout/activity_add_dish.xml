@@ -404,7 +404,6 @@
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-
                     <TextView
                         android:id="@+id/txtChooseDayAvai"
                         style="@style/txtIntersemibold16"
@@ -420,12 +419,119 @@
                         tools:text="@string/msg_choose_day_avai" />
 
                     <LinearLayout
+                        android:id="@+id/Toggles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonMon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Mon"
+                            android:textOn="Mon" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonTue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Tue"
+                            android:textOn="Tue" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonWed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Wed"
+                            android:textOn="Wed" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonThu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Thu"
+                            android:textOn="Thu" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Toggles2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_40pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonFri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Fri"
+                            android:textOn="Fri" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonSat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Sat"
+                            android:textOn="Sat" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonSun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Sun"
+                            android:textOn="Sun" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
                         android:id="@+id/linearColumnestimatedtime"
                         style="@style/groupStylecornerRadius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_2pxh"
-                        android:layout_marginTop="@dimen/_154pxv"
+                        android:layout_marginTop="@dimen/_50pxv"
                         android:layout_marginEnd="@dimen/_10pxh"
                         android:orientation="vertical">
 
@@ -506,6 +612,7 @@
                         android:text="@string/lbl_save"
                         android:textAllCaps="false"
                         tools:text="@string/lbl_save" />
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
