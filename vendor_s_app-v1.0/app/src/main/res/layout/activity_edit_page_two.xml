@@ -4,6 +4,7 @@
     <data>
         <variable name="editPageTwoVM" type="com.betise_lunchline_vendor.app.modules.editpagetwo.data.viewmodel.EditPageTwoVM"/>
     </data>
+
     <LinearLayout android:gravity="center_horizontal"
         android:id="@+id/linearColumn"
         android:layout_height="match_parent"
@@ -62,26 +63,36 @@
                     cornerRadius="@{@dimen/_15pxh}"
                     imageRes="@{@drawable/img_image4}"
                     tools:ignore="ContentDescription" tools:src="@drawable/img_image4"/>
-                <LinearLayout android:gravity="end"
+
+                <LinearLayout
                     android:id="@+id/linearColumndishname"
-                    android:layout_height="wrap_content"
+                    style="@style/groupStylecornerRadius_1"
                     android:layout_width="match_parent"
-                    android:orientation="vertical" style="@style/groupStylecornerRadius_1">
-                    <LinearLayout android:id="@+id/linearRowdishname"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearRowdishname"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_19pxh"
                         android:layout_marginStart="@dimen/_9pxh"
                         android:layout_marginTop="@dimen/_5pxv"
-                        android:layout_width="match_parent" android:orientation="horizontal">
-                        <TextView android:ellipsize="end"
+                        android:layout_marginEnd="@dimen/_19pxh"
+                        android:orientation="horizontal">
+
+                        <TextView
                             android:id="@+id/txtDishName"
+                            style="@style/txtIntersemibold18"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/_28pxv"
                             android:layout_weight="0.49"
-                            android:layout_width="0dp"
+                            android:ellipsize="end"
                             android:singleLine="true"
                             android:text="@{editPageTwoVM.editPageTwoModel.txtDishName}"
-                            style="@style/txtIntersemibold18" tools:text="@string/lbl_dish_name"/>
+                            tools:text="@string/lbl_dish_name" />
+
 
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnAdd"
@@ -121,6 +132,19 @@
                         android:text="@string/lbl_delete"
                         android:textAllCaps="false"
                         tools:text="@string/lbl_delete" />
+
+                    <ToggleButton
+                        android:id="@+id/toggleButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_49pxv"
+                        android:layout_marginTop="@dimen/_11pxv"
+                        android:layout_marginEnd="@dimen/_250pxv"
+                        android:layout_marginBottom="@dimen/_8pxv"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
                 <ImageView android:id="@+id/imageImageFourOne"
                     android:layout_height="@dimen/_144pxh"

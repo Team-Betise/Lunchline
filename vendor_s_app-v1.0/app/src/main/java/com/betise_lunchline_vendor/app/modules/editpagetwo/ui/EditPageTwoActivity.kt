@@ -9,6 +9,7 @@ import com.betise_lunchline_vendor.app.R
 import com.betise_lunchline_vendor.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_vendor.app.databinding.ActivityEditPageTwoBinding
 import com.betise_lunchline_vendor.app.modules.adddish.ui.AddDishActivity
+import com.betise_lunchline_vendor.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_vendor.app.modules.editpagetwo.`data`.viewmodel.EditPageTwoVM
 import kotlin.Boolean
 import kotlin.String
@@ -29,7 +30,7 @@ class EditPageTwoActivity :
       finish()
     }
     binding.btnAdd.setOnClickListener{
-      val destIntent =AddDishActivity.getIntent(this, null)
+      val destIntent =DishPageActivity.getIntent(this, null)
       startActivity(destIntent)
     }
   }
