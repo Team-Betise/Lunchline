@@ -52,6 +52,24 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         val destIntent = HomePageActivity.getIntent(this,null)
       startActivity(destIntent)
       }
+//          AuthUI.getInstance()
+//        .createSignInIntentBuilder()
+//        .setAvailableProviders(providers)
+//        .setTheme(R.style.FuckingHell)
+//        .build()
+//      startA?ctivity(destIntent)
+    }
+
+
+//    binding.linearGooglelogin.setOnClickListener {
+//      val destIntent = HomePageActivity.getIntent(this, null)
+//      AuthUI.getInstance()
+//        .createSignInIntentBuilder()
+//        .setAvailableProviders(providers)
+//        .setTheme(R.style.FuckingHell)
+//        .build()
+//      startActivity(destIntent)
+//    }
 
   companion object {
     const val TAG: String = "LOGIN_ACTIVITY"
