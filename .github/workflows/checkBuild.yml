@@ -25,8 +25,8 @@ jobs:
         working-directory: ./vendor_s_app-v1.0
         run: ./gradlew build --no-daemon
       - name: Grant execute permission for gradle build
-        working-directory: ./"Kitchen App"
+        working-directory: ./"Kitchen app"
         run: chmod +x ./gradlew
       - name: Build the kitchen app
-        working-directory: ./"Kitchen App"
+        working-directory: ./"Kitchen app"
         run: ./gradlew build --no-daemon
