@@ -53,164 +53,173 @@
             </LinearLayout>
         </androidx.appcompat.widget.Toolbar>
 
-        <FrameLayout
-            android:id="@+id/frameStackgroupseventeen"
-            style="@style/groupStylegray_901"
+        <ScrollView
+            android:id="@+id/scrollViewScrollview"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_779pxv"
-            android:layout_marginTop="@dimen/_117pxv"
-            android:gravity="start">
-
-            <LinearLayout
-                android:id="@+id/linearColumngroupseventeen"
-                style="@style/groupStylegray_900cornerRadius"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_11pxv"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:fillViewport="true">
+            <FrameLayout
+                android:id="@+id/frameStackgroupseventeen"
+                style="@style/groupStylegray_901"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|start"
-                android:layout_marginBottom="@dimen/_10pxv"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtGroupSeventeen"
-                    style="@style/txtSolidRounded_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_18pxh"
-                    android:layout_marginTop="@dimen/_26pxv"
-                    android:layout_marginEnd="@dimen/_18pxh"
-                    android:ellipsize="end"
-                    android:paddingStart="@dimen/_21pxh"
-                    android:paddingTop="@dimen/_30pxv"
-                    android:paddingEnd="@dimen/_21pxh"
-                    android:paddingBottom="@dimen/_30pxv"
-                    android:singleLine="true"
-                    android:text="@{profilePageVM.profilePageModel.txtGroupSeventeen}"
-                    tools:text="@string/lbl_add_image" />
-
-                <TextView
-                    android:id="@+id/txtSurajshakya"
-                    style="@style/txtIntermedium16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_18pxh"
-                    android:layout_marginTop="@dimen/_21pxv"
-                    android:layout_marginEnd="@dimen/_18pxh"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="@{profilePageVM.profilePageModel.txtSurajshakya}"
-                    tools:text="@string/lbl_suraj_shakya" />
-
-                <TextView
-                    android:id="@+id/txtMobileNo"
-                    style="@style/txtRobotoromanmedium14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="@dimen/_18pxh"
-                    android:layout_marginTop="@dimen/_9pxv"
-                    android:layout_marginEnd="@dimen/_18pxh"
-                    android:ellipsize="end"
-                    android:singleLine="true"
-                    android:text="@{profilePageVM.profilePageModel.txtMobileNo}"
-                    tools:text="@string/lbl_9841222345" />
-
-                <TextView
-                    android:id="@+id/txtOrderHistory"
-                    style="@style/txtPoppinsmedium14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="@dimen/_18pxh"
-                    android:layout_marginTop="@dimen/_48pxv"
-                    android:layout_marginEnd="@dimen/_18pxh"
-                    android:ellipsize="end"
-                    android:lineSpacingExtra="@dimen/_1pxh"
-                    android:singleLine="true"
-                    android:text="@{profilePageVM.profilePageModel.txtOrderHistory}"
-                    tools:text="@string/lbl_order_history" />
+                android:layout_height="@dimen/_779pxv"
+                android:layout_marginTop="@dimen/_117pxv"
+                android:gravity="start">
 
                 <LinearLayout
-                    android:id="@+id/linearColumnlanguage"
-                    style="@style/groupStylecornerRadius_2"
+                    android:id="@+id/linearColumngroupseventeen"
+                    style="@style/groupStylegray_900cornerRadius"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_18pxh"
-                    android:layout_marginTop="@dimen/_38pxv"
-                    android:layout_marginEnd="@dimen/_18pxh"
-                    android:layout_marginBottom="@dimen/_151pxv"
+                    android:layout_height="939dp"
+                    android:layout_gravity="top|start"
+                    android:layout_marginBottom="@dimen/_10pxv"
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/txtLanguage"
-                        style="@style/txtIntermedium14"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txtGroupSeventeen"
+                        style="@style/txtSolidRounded_2"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_12pxh"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/_18pxh"
+                        android:layout_marginTop="@dimen/_26pxv"
+                        android:layout_marginEnd="@dimen/_18pxh"
+                        android:ellipsize="end"
+                        android:paddingStart="@dimen/_21pxh"
+                        android:paddingTop="@dimen/_30pxv"
+                        android:paddingEnd="@dimen/_21pxh"
+                        android:paddingBottom="@dimen/_30pxv"
+                        android:singleLine="true"
+                        android:text="@{profilePageVM.profilePageModel.txtGroupSeventeen}"
+                        tools:text="@string/lbl_add_image" />
+
+                    <TextView
+                        android:id="@+id/txtSurajshakya"
+                        style="@style/txtIntermedium16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/_18pxh"
+                        android:layout_marginTop="@dimen/_21pxv"
+                        android:layout_marginEnd="@dimen/_18pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{profilePageVM.profilePageModel.txtSurajshakya}"
+                        tools:text="@string/lbl_suraj_shakya" />
+
+                    <TextView
+                        android:id="@+id/txtMobileNo"
+                        style="@style/txtRobotoromanmedium14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginStart="@dimen/_18pxh"
                         android:layout_marginTop="@dimen/_9pxv"
-                        android:layout_marginEnd="@dimen/_12pxh"
-                        android:gravity="start"
-                        android:lineSpacingExtra="@dimen/_3pxh"
-                        android:text="@{profilePageVM.profilePageModel.txtLanguage}"
-                        tools:text="@string/msg_order_details" />
+                        android:layout_marginEnd="@dimen/_18pxh"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="@{profilePageVM.profilePageModel.txtMobileNo}"
+                        tools:text="@string/lbl_9841222345" />
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerListpngeggninetynine"
-                        itemSpace="@{@dimen/_13pxh}"
+                    <TextView
+                        android:id="@+id/txtOrderHistory"
+                        style="@style/txtPoppinsmedium14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:layout_marginStart="@dimen/_18pxh"
+                        android:layout_marginTop="@dimen/_48pxv"
+                        android:layout_marginEnd="@dimen/_18pxh"
+                        android:ellipsize="end"
+                        android:lineSpacingExtra="@dimen/_1pxh"
+                        android:singleLine="true"
+                        android:text="@{profilePageVM.profilePageModel.txtOrderHistory}"
+                        tools:text="@string/lbl_order_history" />
+
+                    <LinearLayout
+                        android:id="@+id/linearColumnlanguageOne"
+                        style="@style/groupStylecornerRadius_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_24pxh"
-                        android:layout_marginTop="@dimen/_18pxv"
-                        android:layout_marginEnd="@dimen/_24pxh"
-                        android:layout_marginBottom="@dimen/_15pxv"
-                        android:gravity="start"
-                        android:orientation="vertical"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        tools:itemCount="2"
-                        tools:listitem="@layout/row_listpngeggninetynine" />
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginStart="@dimen/_25pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_25pxh"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtLanguageOne"
+                            style="@style/txtIntermedium14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxh"
+                            android:layout_marginTop="@dimen/_9pxv"
+                            android:layout_marginEnd="@dimen/_12pxh"
+                            android:gravity="start"
+                            android:lineSpacingExtra="@dimen/_3pxh"
+                            android:text="@{profilePageVM.profilePageModel.txtLanguageOne}"
+                            tools:text="@string/msg_order_details" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerListpngeggninetynineTwo"
+                            itemSpace="@{@dimen/_13pxh}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxh"
+                            android:layout_marginTop="@dimen/_18pxv"
+                            android:layout_marginEnd="@dimen/_12pxh"
+                            android:layout_marginBottom="@dimen/_15pxv"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/row_listpngeggninetynine_two" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearColumnlanguage"
+                        style="@style/groupStylecornerRadius_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_18pxh"
+                        android:layout_marginTop="@dimen/_38pxv"
+                        android:layout_marginEnd="@dimen/_18pxh"
+                        android:layout_marginBottom="@dimen/_151pxv"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtLanguage"
+                            style="@style/txtIntermedium14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxh"
+                            android:layout_marginTop="@dimen/_9pxv"
+                            android:layout_marginEnd="@dimen/_12pxh"
+                            android:gravity="start"
+                            android:lineSpacingExtra="@dimen/_3pxh"
+                            android:text="@{profilePageVM.profilePageModel.txtLanguage}"
+                            tools:text="@string/msg_order_details" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerListpngeggninetynine"
+                            itemSpace="@{@dimen/_13pxh}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_24pxh"
+                            android:layout_marginTop="@dimen/_18pxv"
+                            android:layout_marginEnd="@dimen/_24pxh"
+                            android:layout_marginBottom="@dimen/_15pxv"
+                            android:gravity="start"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            tools:itemCount="2"
+                            tools:listitem="@layout/row_listpngeggninetynine" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearColumnlanguageOne"
-                style="@style/groupStylecornerRadius_2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_marginStart="@dimen/_25pxh"
-                android:layout_marginTop="@dimen/_10pxv"
-                android:layout_marginEnd="@dimen/_25pxh"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtLanguageOne"
-                    style="@style/txtIntermedium14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_12pxh"
-                    android:layout_marginTop="@dimen/_9pxv"
-                    android:layout_marginEnd="@dimen/_12pxh"
-                    android:gravity="start"
-                    android:lineSpacingExtra="@dimen/_3pxh"
-                    android:text="@{profilePageVM.profilePageModel.txtLanguageOne}"
-                    tools:text="@string/msg_order_details" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerListpngeggninetynineTwo"
-                    itemSpace="@{@dimen/_13pxh}"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_12pxh"
-                    android:layout_marginTop="@dimen/_18pxv"
-                    android:layout_marginEnd="@dimen/_12pxh"
-                    android:layout_marginBottom="@dimen/_15pxv"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:itemCount="2"
-                    tools:listitem="@layout/row_listpngeggninetynine_two" />
-            </LinearLayout>
-        </FrameLayout>
+            </FrameLayout>
+        </ScrollView>
     </LinearLayout>
 </layout>
