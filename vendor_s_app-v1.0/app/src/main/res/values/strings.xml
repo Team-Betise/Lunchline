@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+    <string name="app_name">vartika2401_s_application14</string>
+    <string name="loading">Loading…</string>
+    <string name="no_internet_connection">No internet connection!</string>
+<string name="lbl_exampel_1234">exampel#1234</string>
+<string name="msg_item_13">Item 1             x2
+item 2            x3
+item 3            x4
+item 4            x5    </string>
+<string name="lbl_phone_no">Phone No.</string>
+<string name="msg_new_user_sign">New User? Sign up</string>
+<string name="lbl_new_user">New User? </string>
+<string name="msg_choose_a_pic_n">Choose a pic (Not more than 2MB)</string>
+<string name="lbl_resend">Resend</string>
+<string name="lbl_x">x</string>
+<string name="lbl_confirm">Confirm</string>
+<string name="lbl_description">Description</string>
+<string name="msg_do_you_have_an2">Do you have an account?  </string>
+<string name="msg_item_12">Item 1             x2
+item 2            x3
+item 3            x4
+item 4            x5     </string>
+<string name="msg_upload_a_pictur">Upload a picture</string>
+<string name="lbl_log_in">Log in</string>
+<string name="lbl_read_the">Read the</string>
+<string name="lbl_hand_out">Hand-out</string>
+<string name="lbl_add_items">Add Items</string>
+<string name="lbl_dish_name">Dish Name</string>
+<string name="lbl_sign_up">Sign up</string>
+<string name="lbl_get_otp">GET OTP</string>
+<string name="lbl_name">Name</string>
+<string name="lbl_price">Price</string>
+<string name="lbl_min">Min</string>
+<string name="msg_estimated_time">Estimated time per dish</string>
+<string name="lbl_enter_dish_name">Enter Dish Name</string>
+<string name="lbl_save">Save</string>
+<string name="msg_dish_descriptio">Dish Description. this contains a good and long description 
+-
+-
+-
+-</string>
+<string name="msg_didn_t_receive">Didn\u2019t receive the OTP?</string>
+<string name="msg_choose_day_avai">Choose Day Availability</string>
+<string name="lbl_from">From</string>
+<string name="lbl_search">Search</string>
+<string name="lbl_to">To</string>
+<string name="msg_item_1">Item 1             x2
+item 2            x3
+item 3            x4</string>
+<string name="msg_item_1_item_2_i">Item 1
+item 2
+item 3</string>
+<string name="lbl_11_11">11-11</string>
+<string name="msg_login_with_emai">Login with Email</string>
+<string name="lbl_delete">Delete</string>
+<string name="lbl_otp">OTP</string>
+<string name="lbl_x_2">x 2</string>
+<string name="lbl_hrs">Hrs</string>
+<string name="lbl_1234567890">1234567890</string>
+<string name="lbl_hand_out_items">Hand-out Items</string>
+<string name="msg_enter_available">Enter Available Timings</string>
+<string name="lbl_welcome">Welcome</string>
+<string name="lbl_70">70</string>
+<string name="lbl_rules">Rules</string>
+<string name="lbl_add">Add</string>
+<string name="lbl_edit_menu">Edit Menu</string>
+<string name="msg_do_you_have_an">Do you have an account?  Log in</string>
+<string name="lbl_11_11_otp">11-11 OTP</string>
+<string name="lbl_lunch_line">Lunch Line</string>
+<string name="lbl_item_3">Item-3</string>
+<string name="msg_read_the_rules">Read the Rules and be aware of all the rules and tick the box if you accept the rules</string>
+<string name="lbl_welcome_to">Welcome to</string>
+<string name="msg_enter_dish_desc">Enter Dish Description</string>
+<string name="lbl_item_1">Item-1</string>
+<string name="lbl_item_2">Item-2</string>
+<string name="msg_and_be_aware_of"> and be aware of all the rules and tick the box if you accept the rules</string>
+<string name="msg_please_enter_valid_text">Please enter valid text</string>
+<string name="msg_please_enter_valid_phone_nu">Please enter valid phone number</string>
+</resources>

@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="kitchenVM" type="com.betise_lunchline_kitchen.app.modules.kitchen.data.viewmodel.KitchenVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumndishname"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical" style="@style/groupStylegray_901">
+        <androidx.appcompat.widget.Toolbar android:gravity="start"
+            android:id="@+id/toolbarToolbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:contentInsetStart="0dp" style="@style/groupStylegray_901">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearColumnarrowleft"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3pxv"
+                android:layout_marginEnd="@dimen/_22pxh"
+                android:layout_marginStart="@dimen/_21pxh"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <ImageView android:id="@+id/imageArrowleft"
+                    android:layout_height="@dimen/_8pxh"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:layout_marginStart="@dimen/_3pxh"
+                    android:layout_width="@dimen/_20pxh"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_arrowleft"
+                    tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                <androidx.appcompat.widget.SearchView
+                    android:background="@drawable/rectangle_bg_gray_50_border_green_700_radius_10"
+                    android:id="@+id/searchViewSearchbar"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    style="@style/searchViewSearchbar"
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    app:queryHint="@string/lbl_search" app:searchIcon="@drawable/img_search"/>
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <ScrollView android:clipToPadding="false"
+            android:fillViewport="true"
+            android:gravity="center_horizontal"
+            android:id="@+id/scrollViewScrollview"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/_45pxh"
+            android:layout_marginStart="@dimen/_45pxh"
+            android:layout_marginTop="@dimen/_70pxv"
+            android:layout_weight="1" android:layout_width="match_parent">
+            <LinearLayout android:gravity="start"
+                android:id="@+id/linearKitchen"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent" android:orientation="vertical">
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDishName"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_33pxh"
+                    android:layout_marginStart="@dimen/_33pxh"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{kitchenVM.kitchenModel.txtDishName}"
+                    style="@style/txtPoppinsmedium25" tools:text="@string/lbl_dish_name"/>
+                <FrameLayout android:id="@+id/frameStackquantity"
+                    android:layout_height="@dimen/_154pxv"
+                    android:layout_marginTop="@dimen/_55pxv" android:layout_width="@dimen/_297pxh">
+                    <LinearLayout android:id="@+id/linearRowpolygonone"
+                        android:layout_gravity="top|start"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal" style="@style/groupStylecornerRadius">
+
+                        <LinearLayout
+                            android:id="@+id/linearColumnquantity"
+                            android:layout_width="0dp"
+                            android:layout_height="83dp"
+                            android:layout_marginStart="@dimen/_16pxh"
+                            android:layout_marginTop="@dimen/_23pxv"
+                            android:layout_marginBottom="@dimen/_49pxv"
+                            android:layout_weight="0.84"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearRowquantity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtQuantity"
+                                    style="@style/txtPoppinsbold12"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.43"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtQuantity}"
+                                    tools:text="@string/lbl_quantity" />
+
+                                <TextView
+                                    android:id="@+id/txtReadytogo"
+                                    style="@style/txtPoppinsbold12"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_46pxh"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:layout_weight="0.57"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtReadytogo}"
+                                    tools:text="@string/lbl_ready_to_go" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearRowfive"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20pxh"
+                                android:layout_marginTop="@dimen/_18pxv"
+                                android:layout_marginEnd="@dimen/_20pxh"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtFive"
+                                    style="@style/txtPoppinsmedium30"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtFive}"
+                                    tools:text="@string/lbl_5" />
+
+                                <TextView
+                                    android:id="@+id/txtZero"
+                                    style="@style/txtPoppinsbold30"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_88pxh"
+                                    android:layout_marginBottom="@dimen/_1pxv"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtZero}"
+                                    tools:text="@string/lbl_0" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:id="@+id/linearColumnpolygonone"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginEnd="@dimen/_48pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_weight="0.16"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonOne"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon1"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon1"/>
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonTwo"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_marginTop="@dimen/_4pxv"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon2"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon2"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnReady"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_41pxv"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_29pxh"
+                        android:paddingTop="@dimen/_8pxv"
+                        android:paddingEnd="@dimen/_28pxh"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ready"
+                        android:textAllCaps="false"
+                        tools:text="@string/lbl_ready" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnReady2"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_41pxv"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_29pxh"
+                        android:paddingTop="@dimen/_8pxv"
+                        android:paddingEnd="@dimen/_28pxh"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ready"
+                        android:textAllCaps="false"
+                        tools:text="@string/lbl_ready" />
+                </FrameLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDishNameOne"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_33pxh"
+                    android:layout_marginStart="@dimen/_33pxh"
+                    android:layout_marginTop="@dimen/_40pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{kitchenVM.kitchenModel.txtDishNameOne}"
+                    style="@style/txtPoppinsmedium25" tools:text="@string/lbl_dish_name"/>
+                <FrameLayout android:id="@+id/frameStackquantityOne"
+                    android:layout_height="@dimen/_154pxv"
+                    android:layout_marginTop="@dimen/_55pxv" android:layout_width="@dimen/_297pxh">
+                    <LinearLayout
+                        android:id="@+id/linearRowpolygononeOne"
+                        android:layout_gravity="top|start"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal" style="@style/groupStylecornerRadius">
+
+                        <LinearLayout
+                            android:id="@+id/linearColumnquantityOne"
+                            android:layout_width="0dp"
+                            android:layout_height="77dp"
+                            android:layout_marginStart="@dimen/_16pxh"
+                            android:layout_marginTop="@dimen/_23pxv"
+                            android:layout_marginBottom="@dimen/_49pxv"
+                            android:layout_weight="0.84"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/linearRowquantityOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtQuantityOne"
+                                    style="@style/txtPoppinsbold12"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.43"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtQuantityOne}"
+                                    tools:text="@string/lbl_quantity" />
+
+                                <TextView
+                                    android:id="@+id/txtReadytogoOne"
+                                    style="@style/txtPoppinsbold12"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_46pxh"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:layout_weight="0.57"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtReadytogoOne}"
+                                    tools:text="@string/lbl_ready_to_go" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linearRowfiveOne"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_20pxh"
+                                android:layout_marginTop="@dimen/_18pxv"
+                                android:layout_marginEnd="@dimen/_20pxh"
+                                android:gravity="start"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtFiveOne"
+                                    style="@style/txtPoppinsmedium30"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_1pxv"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtFiveOne}"
+                                    tools:text="@string/lbl_5" />
+
+                                <TextView
+                                    android:id="@+id/txtZeroOne"
+                                    style="@style/txtPoppinsbold30"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_88pxh"
+                                    android:layout_marginBottom="@dimen/_1pxv"
+                                    android:ellipsize="end"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtZeroOne}"
+                                    tools:text="@string/lbl_0" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:id="@+id/linearColumnpolygononeOne"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginEnd="@dimen/_48pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_weight="0.16"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonOneOne"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon1"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon1"/>
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonTwoOne"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_marginTop="@dimen/_4pxv"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon2"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon2"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnReadyOne"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_41pxv"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_29pxh"
+                        android:paddingTop="@dimen/_8pxv"
+                        android:paddingEnd="@dimen/_28pxh"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ready"
+                        android:textAllCaps="false"
+                        tools:text="@string/lbl_ready" />
+                </FrameLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtDishNameTwo"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_33pxh"
+                    android:layout_marginStart="@dimen/_33pxh"
+                    android:layout_marginTop="@dimen/_40pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{kitchenVM.kitchenModel.txtDishNameTwo}"
+                    style="@style/txtPoppinsmedium25" tools:text="@string/lbl_dish_name"/>
+                <FrameLayout android:id="@+id/frameStackquantityTwo"
+                    android:layout_height="@dimen/_154pxv"
+                    android:layout_marginTop="@dimen/_55pxv" android:layout_width="@dimen/_297pxh">
+                    <LinearLayout
+                        android:id="@+id/linearRowpolygononeTwo"
+                        android:layout_gravity="top|start"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal" style="@style/groupStylecornerRadius">
+
+                        <LinearLayout
+                            android:id="@+id/linearColumnquantityTwo"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginStart="@dimen/_9pxh"
+                            android:layout_marginTop="@dimen/_20pxv"
+                            android:layout_weight="0.84"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearRowquantityTwo"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:layout_marginStart="@dimen/_7pxh"
+                                android:layout_width="match_parent" android:orientation="horizontal">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtQuantityTwo"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtQuantityTwo}"
+                                    style="@style/txtPoppinsbold12" tools:text="@string/lbl_quantity"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtReadytogoTwo"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_25pxh"
+                                    android:layout_weight="0.5"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtReadytogoTwo}"
+                                    style="@style/txtPoppinsbold12" tools:text="@string/lbl_ready_to_go"/>
+                            </LinearLayout>
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearRowfiveTwo"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="match_parent" android:orientation="horizontal">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtFiveTwo"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_4pxv"
+                                    android:layout_marginTop="@dimen/_3pxv"
+                                    android:layout_weight="0.56"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtFiveTwo}"
+                                    style="@style/txtPoppinsmedium30" tools:text="@string/lbl_5"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtZeroTwo"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_43pxh"
+                                    android:layout_weight="0.44"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtZeroTwo}"
+                                    style="@style/txtPoppinsbold30" tools:text="@string/lbl_0"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:id="@+id/linearColumnpolygononeTwo"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginEnd="@dimen/_48pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_weight="0.16"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonOneTwo"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon1"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon1"/>
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonTwoTwo"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_marginTop="@dimen/_4pxv"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon2"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon2"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnReady3"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_41pxv"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_29pxh"
+                        android:paddingTop="@dimen/_8pxv"
+                        android:paddingEnd="@dimen/_28pxh"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ready"
+                        android:textAllCaps="false"
+                        tools:text="@string/lbl_ready" />
+
+                </FrameLayout>
+                <TextView android:id="@+id/txtDishNameThree"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_33pxh"
+                    android:layout_marginStart="@dimen/_33pxh"
+                    android:layout_marginTop="@dimen/_35pxv"
+                    android:layout_width="match_parent"
+                    android:text="@{kitchenVM.kitchenModel.txtDishNameThree}"
+                    style="@style/txtPoppinsmedium25" tools:text="@string/lbl_dish_name"/>
+                <FrameLayout android:id="@+id/frameStackquantityThree"
+                    android:layout_height="@dimen/_154pxv"
+                    android:layout_marginTop="@dimen/_14pxv" android:layout_width="@dimen/_297pxh">
+                    <LinearLayout
+                        android:id="@+id/linearRowpolygononeThree"
+                        android:layout_gravity="top|start"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_10pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal" style="@style/groupStylecornerRadius">
+
+                        <LinearLayout
+                            android:id="@+id/linearColumnquantityThree"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginStart="@dimen/_9pxh"
+                            android:layout_marginTop="@dimen/_20pxv"
+                            android:layout_weight="0.84"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearRowquantityThree"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:layout_marginStart="@dimen/_7pxh"
+                                android:layout_width="match_parent" android:orientation="horizontal">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtQuantityThree"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtQuantityThree}"
+                                    style="@style/txtPoppinsbold12" tools:text="@string/lbl_quantity"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtReadytogoThree"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_25pxh"
+                                    android:layout_weight="0.5"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtReadytogoThree}"
+                                    style="@style/txtPoppinsbold12" tools:text="@string/lbl_ready_to_go"/>
+                            </LinearLayout>
+                            <LinearLayout android:gravity="start"
+                                android:id="@+id/linearRowfiveThree"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_10pxh"
+                                android:layout_marginTop="@dimen/_5pxv"
+                                android:layout_width="match_parent" android:orientation="horizontal">
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtFiveThree"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_4pxv"
+                                    android:layout_marginTop="@dimen/_3pxv"
+                                    android:layout_weight="0.56"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtFiveThree}"
+                                    style="@style/txtPoppinsmedium30" tools:text="@string/lbl_5"/>
+                                <TextView android:ellipsize="end"
+                                    android:id="@+id/txtZeroThree"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_43pxh"
+                                    android:layout_weight="0.44"
+                                    android:layout_width="0dp"
+                                    android:singleLine="true"
+                                    android:text="@{kitchenVM.kitchenModel.txtZeroThree}"
+                                    style="@style/txtPoppinsbold30" tools:text="@string/lbl_0"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center_horizontal"
+                            android:id="@+id/linearColumnpolygononeThree"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_34pxv"
+                            android:layout_marginEnd="@dimen/_48pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_weight="0.16"
+                            android:layout_width="0dp" android:orientation="vertical">
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonOneThree"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon1"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon1"/>
+                            <ImageView
+                                android:gravity="center_horizontal"
+                                android:id="@+id/imagePolygonTwoThree"
+                                android:layout_height="@dimen/_37pxh"
+                                android:layout_marginTop="@dimen/_4pxv"
+                                android:layout_width="match_parent"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/img_polygon2"
+                                tools:ignore="ContentDescription" tools:src="@drawable/img_polygon2"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnReady4"
+                        style="@style/btnSolidRounded"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_41pxv"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginStart="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_7pxh"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/_29pxh"
+                        android:paddingTop="@dimen/_8pxv"
+                        android:paddingEnd="@dimen/_28pxh"
+                        android:paddingBottom="@dimen/_3pxv"
+                        android:singleLine="true"
+                        android:text="@string/lbl_ready"
+                        android:textAllCaps="false"
+                        tools:text="@string/lbl_ready" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

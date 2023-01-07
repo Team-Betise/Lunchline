@@ -340,23 +340,12 @@
                     android:layout_weight="0.17"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/imageCall"
-                        android:layout_width="@dimen/_6pxh"
-                        android:layout_height="@dimen/_9pxh"
-                        android:layout_marginTop="@dimen/_2pxv"
-                        android:layout_marginBottom="@dimen/_2pxv"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/img_call"
-                        tools:ignore="ContentDescription"
-                        tools:src="@drawable/img_call" />
-
                     <TextView
                         android:id="@+id/txt1200"
                         style="@style/txtPoppinsregular12"
-                        android:layout_width="0dp"
+                        android:layout_width="64dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_2pxh"
+                        android:layout_marginStart="@dimen/_1pxh"
                         android:layout_weight="0.83"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_1pxh"
@@ -434,17 +423,6 @@
                             android:text="@{cartVM.cartModel.txtPriceShipping}"
                             tools:text="@string/msg_price_shipping" />
 
-                        <ImageView
-                            android:id="@+id/imageCallOne"
-                            android:layout_width="@dimen/_6pxh"
-                            android:layout_height="@dimen/_9pxh"
-                            android:layout_marginStart="@dimen/_114pxh"
-                            android:layout_marginTop="@dimen/_56pxv"
-                            android:layout_marginBottom="@dimen/_4pxv"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_call"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_call" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -453,7 +431,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_1pxh"
-                    android:layout_marginTop="@dimen/_23pxv"
+                    android:layout_marginTop="@dimen/_29pxv"
                     android:layout_marginBottom="@dimen/_2pxv"
                     android:layout_weight="0.18"
                     android:gravity="start"
@@ -466,17 +444,6 @@
                         android:layout_marginStart="@dimen/_10pxh"
                         android:gravity="end"
                         android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageCallTwo"
-                            android:layout_width="@dimen/_6pxh"
-                            android:layout_height="@dimen/_9pxh"
-                            android:layout_marginTop="@dimen/_1pxv"
-                            android:layout_marginBottom="@dimen/_2pxv"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_call"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_call" />
 
                         <TextView
                             android:id="@+id/txt1000"
@@ -496,19 +463,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10pxh"
-                        android:layout_marginTop="@dimen/_9pxv"
+                        android:layout_marginTop="@dimen/_12pxv"
                         android:gravity="end"
                         android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/imageCallThree"
-                            android:layout_width="@dimen/_6pxh"
-                            android:layout_height="@dimen/_9pxh"
-                            android:layout_marginBottom="@dimen/_4pxv"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_call"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_call" />
 
                         <TextView
                             android:id="@+id/txtTwoHundred"
@@ -529,8 +486,8 @@
                         style="@style/txtPoppinsmedium12_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_21pxv"
-                        android:layout_marginEnd="@dimen/_10pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_marginEnd="@dimen/_1pxh"
                         android:ellipsize="end"
                         android:lineSpacingExtra="@dimen/_1pxh"
                         android:singleLine="true"

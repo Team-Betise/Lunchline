@@ -23,19 +23,6 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/img_arrowleft"
                 tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
-            <androidx.appcompat.widget.SearchView
-                android:background="@drawable/rectangle_bg_gray_50_border_green_700_radius_10"
-                android:gravity="center_horizontal"
-                android:id="@+id/searchViewGroupFive"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_20pxh"
-                android:layout_marginStart="@dimen/_25pxh"
-                android:layout_marginTop="@dimen/_30pxv"
-                android:layout_width="match_parent"
-                style= "@style/searchViewGroupFive"
-                app:iconifiedByDefault="false"
-                app:queryBackground="@android:color/transparent"
-                app:queryHint="@string/lbl_search" app:searchIcon="@drawable/img_search"/>
         </LinearLayout>
         <TextView android:ellipsize="end" android:id="@+id/txtDishName"
             android:layout_gravity="center_horizontal"
@@ -217,21 +204,26 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <androidx.appcompat.widget.AppCompatButton
-            android:ellipsize="end" android:gravity="center"
             android:id="@+id/btnAddToCart"
+            style="@style/btnSolidRounded_1"
+            android:layout_width="@dimen/_234pxh"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_height="@dimen/_57pxv"
-            android:layout_marginBottom="@dimen/_20pxv"
-            android:layout_marginEnd="@dimen/_30pxh"
             android:layout_marginStart="@dimen/_30pxh"
             android:layout_marginTop="@dimen/_22pxv"
-            android:layout_width="@dimen/_234pxh"
-            android:paddingBottom="@dimen/_19pxv"
-            android:paddingEnd="@dimen/_30pxh"
+            android:layout_marginEnd="@dimen/_30pxh"
+            android:layout_marginBottom="@dimen/_20pxv"
+            android:ellipsize="end"
+            android:gravity="center"
             android:paddingStart="@dimen/_30pxh"
-            android:paddingTop="@dimen/_19pxv" android:singleLine="true"
+            android:paddingTop="@dimen/_19pxv"
+            android:paddingEnd="@dimen/_30pxh"
+            android:paddingBottom="@dimen/_19pxv"
+            android:singleLine="true"
             android:text="@string/lbl_add_to_cart"
-            android:textAllCaps="false" style="@style/btnSolidRounded_1" tools:text="@string/lbl_add_to_cart"/>
+            android:textAllCaps="false"
+            tools:text="@string/lbl_add_to_cart" />
     </LinearLayout>
 </layout>

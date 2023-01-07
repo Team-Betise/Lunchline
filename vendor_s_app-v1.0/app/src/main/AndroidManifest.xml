@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.betise_lunchline_vendor.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.betise_lunchline_vendor.app.appcomponents.di.MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vendorlogin.ui.VendorLoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vednorsignup2two.ui.VednorSignup2TwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.adddish.ui.AddDishActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vendorhome.ui.VendorHomeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vendorprovidor.ui.VendorProvidorActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.editpagetwo.ui.EditPageTwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.editpagethree.ui.EditPageThreeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.editpageone.ui.EditPageOneActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.editpage.ui.EditPageActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vendorprovidorone.ui.VendorProvidorOneActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true"
+            android:name="com.betise_lunchline_vendor.app.modules.splash.ui.SplashActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.vednorsignup1two.ui.VednorSignup1TwoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.betise_lunchline_vendor.app.modules.dishpage.ui.DishPageActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>

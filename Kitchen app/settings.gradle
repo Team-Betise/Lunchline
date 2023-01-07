@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "vartika2401_s_application22"
