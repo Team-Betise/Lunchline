@@ -266,7 +266,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:gravity="start">
+                        android:gravity="start"
+                        android:padding="@dimen/_27pxh">
 <!--                        <include layout="@layout/cart_item_component" />-->
 <!--                        <include layout="@layout/cart_item_component" />-->
 <!--                        <include layout="@layout/cart_item_component" />-->
