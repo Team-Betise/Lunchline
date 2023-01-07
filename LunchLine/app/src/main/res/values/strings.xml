@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
-    <string name="app_name">vartika2401_s_application11</string>
+    <string name="app_name">LunchLine</string>
     <string name="loading">Loading…</string>
     <string name="no_internet_connection">No internet connection!</string>
     <string name="msg_food_item_is2">\u201cFood Item\u201d is Ready</string>
