@@ -28,15 +28,15 @@ class SharedObjects {
     )
     data class Item(
         val dish: Dish,
-        val EndTime: Timestamp,
-        val Status: String,
+        var EndTime: Timestamp,
+        var Status: String,
     )
     // Order class to use in the app
     data class Order(
-        val Status: String,
+        var Status: String,
         val Amount: Long,
-        val ItemsRemaining: Long,
-        val Items: ArrayList<Item>,
+        var ItemsRemaining: Long,
+        var Items: ArrayList<Item>,
         val TimePlaced: Timestamp,
         val VerificationCode: String,
     )
@@ -44,17 +44,17 @@ class SharedObjects {
     data class OrderDB(
         val User: ReferenceSet,
         val Amount: Long,
-        val ItemsRemaining: Long,
-        val Status: String,
+        var ItemsRemaining: Long,
+        var Status: String,
         val TimePlaced: Timestamp,
-        val VerificationCode: String,
+        var VerificationCode: String,
     )
     companion object{
         @SuppressLint("StaticFieldLeak")
         val db = Firebase.firestore
-        val user_email: String = ""
+        var user_email: String = ""
         val menuCollection = db.collection("vendors").document("pqCOEjacUXj6r5KM7fEL").collection("menu")
-        val dishes:MutableList<Dish> = mutableListOf<Dish>()
+        var dishes:MutableList<Dish> = mutableListOf<Dish>()
     }
 
 }

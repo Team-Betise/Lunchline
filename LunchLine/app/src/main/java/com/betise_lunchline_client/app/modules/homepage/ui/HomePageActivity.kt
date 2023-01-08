@@ -35,6 +35,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
         val inflater: android.view.LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as
                 android.view.LayoutInflater
 
+        SharedObjects.dishes.clear()
         SharedObjects.menuCollection
             .get()
             .addOnSuccessListener { result ->

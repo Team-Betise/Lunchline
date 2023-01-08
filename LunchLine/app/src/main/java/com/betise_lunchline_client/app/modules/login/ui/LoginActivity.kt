@@ -75,6 +75,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                 // Name, email address, and profile photo Url
                 val name = user!!.displayName
                 val email = user!!.email
+                SharedObjects.user_email = email.toString()
                 val photoUrl = user!!.photoUrl
 
                 // Check if user's email is verified
