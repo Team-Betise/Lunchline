@@ -4,16 +4,19 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat.startActivity
 import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityHomePageBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishtest
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.`data`.viewmodel.HomePageVM
 import com.betise_lunchline_client.app.modules.profilepage.ui.ProfilePageActivity
@@ -24,6 +27,7 @@ import kotlin.Unit
 class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity_home_page) {
     private val viewModel: HomePageVM by viewModels<HomePageVM>()
     private lateinit var linearHomePage: LinearLayout
+    public var dishid: Int = 0
 
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -35,42 +39,49 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
         val inflater: android.view.LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as
                 android.view.LayoutInflater
 
-        SharedObjects.dishes.clear()
-        SharedObjects.dish_ids.clear()
-        SharedObjects.menuCollection
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    val dish = SharedObjects.Dish(
-                        document.data["ItemName"] as String,
-                        document.data["ItemCost"] as Long,
-                        document.data["Desc"] as String,
-                        document.data["CurrentAvailability"] as Boolean,
-                        document.data["Rating"] as Double,
-                        document.data["ReviewCount"] as Long,
-                        document.data["StartTime"] as com.google.firebase.Timestamp,
-                        document.data["EndTime"] as com.google.firebase.Timestamp,
-                        document.data["Days"] as ArrayList<Boolean>,
-                    )
-                    SharedObjects.dishes.add(dish)
-                    SharedObjects.dish_ids.add(document.id)
-                }
-            }
-
+//        SharedObjects.dishes.clear()
+//        SharedObjects.dish_ids.clear()
+//        SharedObjects.menuCollection
+//            .get()
+//            .addOnSuccessListener { result ->
+//                for (document in result) {
+//                    val dish = SharedObjects.Dish(
+//                        document.data["ItemName"] as String,
+//                        document.data["ItemCost"] as Long,
+//                        document.data["Desc"] as String,
+//                        document.data["CurrentAvailability"] as Boolean,
+//                        document.data["Rating"] as Double,
+//                        document.data["ReviewCount"] as Long,
+//                        document.data["StartTime"] as com.google.firebase.Timestamp,
+//                        document.data["EndTime"] as com.google.firebase.Timestamp,
+//                        document.data["Days"] as ArrayList<Boolean>,
+//                    )
+//                    SharedObjects.dishes.add(dish)
+//                    SharedObjects.dish_ids.add(document.id)
+//                }
+//            }
+        val dish: SharedObjects.Dish = SharedObjects.Dish(
+            "Chicken Biryani",
+            100,
+            "Chicken Biryani",true,4.5,100,0,0, arrayOf(true,true,true,true,true,true,true).toCollection(ArrayList()))
+        dishtest.add(dish)
+        println(dishtest)
         // Grab a reference to the component defined in dish_component.xml
 
-        for (i in 1..10) {
+        for (i in 0..dishtest.size-1) {
             val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
 //      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
             val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
             val textView: TextView = layout.findViewById(R.id.txtDishName)
+            textView.text = dishtest[i].ItemName
             val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
             addButton.setOnClickListener {
                 val destIntent = DishPageActivity.getIntent(this, null)
+                destIntent.putExtra("dishid", i)
                 startActivity(destIntent)
             }
 
-            textView.text = "Dish #$i"
+//            textView.text = "Dish #$i"
             linearHomePage.addView(dishComponent)
         }
     }

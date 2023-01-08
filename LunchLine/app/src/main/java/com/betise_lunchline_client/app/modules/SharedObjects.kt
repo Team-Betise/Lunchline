@@ -16,15 +16,15 @@ class SharedObjects {
         val OpenID: String,
     )
     data class Dish(
-        val ItemName: String,
-        val ItemCost: Long,
-        val Desc: String,
-        val CurrentAvailability: Boolean,
-        val Rating: Double,
-        val ReviewCount: Long,
-        val StartTime: Timestamp,
-        val EndTime: Timestamp,
-        val Days: ArrayList<Boolean>,
+        var ItemName: String,
+        var ItemCost: Long,
+        var Desc: String,
+        var CurrentAvailability: Boolean,
+        var Rating: Double,
+        var ReviewCount: Long,
+        var StartTime: Int,
+        var EndTime: Int,
+        var Days: ArrayList<Boolean>,
     )
     data class Item(
         val dish: Dish,
@@ -56,7 +56,8 @@ class SharedObjects {
         val menuCollection = db.collection("vendors").document("pqCOEjacUXj6r5KM7fEL").collection("menu")
         var dishes:MutableList<Dish> = mutableListOf<Dish>()
         var dish_ids:MutableList<String> = mutableListOf<String>()
-        var cart:HashMap<Int, Int> = hashMapOf()
+        var cart:HashMap<Dish, Int> = hashMapOf()
+        var dishtest:MutableList<Dish> = mutableListOf<Dish>()
     }
 
 }
