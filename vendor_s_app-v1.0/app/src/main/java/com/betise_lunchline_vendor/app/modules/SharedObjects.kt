@@ -18,6 +18,7 @@ class SharedObjects {
         val StartTime: Timestamp,
         val EndTime: Timestamp,
         val Days: ArrayList<Boolean>,
+        val ETA: Long,
     )
     companion object{
         @SuppressLint("StaticFieldLeak")

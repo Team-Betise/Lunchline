@@ -2,6 +2,8 @@ package com.betise_lunchline_client.app.modules
 
 import android.annotation.SuppressLint
 import com.google.firebase.Timestamp
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.local.ReferenceSet
 import com.google.firebase.ktx.Firebase
@@ -25,9 +27,15 @@ class SharedObjects {
         val StartTime: Timestamp,
         val EndTime: Timestamp,
         val Days: ArrayList<Boolean>,
+        val ETA: Timestamp,
     )
     data class Item(
         val dish: Dish,
+        var EndTime: Timestamp,
+        var Status: String,
+    )
+    data class ItemDB(
+        val Item: DocumentReference,
         var EndTime: Timestamp,
         var Status: String,
     )
@@ -42,7 +50,7 @@ class SharedObjects {
     )
     // Order class to use to add orders to DB
     data class OrderDB(
-        val User: ReferenceSet,
+        val User: DocumentReference,
         val Amount: Long,
         var ItemsRemaining: Long,
         var Status: String,
@@ -57,6 +65,8 @@ class SharedObjects {
         var dishes:MutableList<Dish> = mutableListOf<Dish>()
         var dish_ids:MutableList<String> = mutableListOf<String>()
         var cart:HashMap<Int, Int> = hashMapOf()
+        var order: Order? = null
+        var orderDB: OrderDB? = null
     }
 
 }
