@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.activity.viewModels
@@ -32,7 +33,9 @@ class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_a
     }
     binding.btnSave.setOnClickListener {
 //      saveData()
-      println(AddDishVM().addDishModel.value?.etFrameTwoValue)
+        val edit:EditText=findViewById(R.id.etFrameTwo)
+        val m=edit.text.toString()
+        println(m)
       val destIntent = EditPageTwoActivity.getIntent(this, null)
       startActivity(destIntent)
     }
