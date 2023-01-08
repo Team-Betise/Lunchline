@@ -36,6 +36,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                 android.view.LayoutInflater
 
         SharedObjects.dishes.clear()
+        SharedObjects.dish_ids.clear()
         SharedObjects.menuCollection
             .get()
             .addOnSuccessListener { result ->
@@ -52,6 +53,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                         document.data["Days"] as ArrayList<Boolean>,
                     )
                     SharedObjects.dishes.add(dish)
+                    SharedObjects.dish_ids.add(document.id)
                 }
             }
 

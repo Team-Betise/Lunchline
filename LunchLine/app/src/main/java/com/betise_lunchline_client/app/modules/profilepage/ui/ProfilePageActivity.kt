@@ -99,6 +99,7 @@ class ProfilePageActivity : BaseActivity<ActivityProfilePageBinding>(R.layout.ac
                                 var dish: SharedObjects.Dish? = null
                                 dish_ref.get()
                                     .addOnSuccessListener { result ->
+                                        // change document to result otherwise error
                                         Toast.makeText(this, "Found a dish", Toast.LENGTH_SHORT).show()
 //                                        dish = SharedObjects.Dish(
 //                                            result.data["ItemName"] as String,
