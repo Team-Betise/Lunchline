@@ -68,7 +68,7 @@ class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_a
 
     }
 
-    private fun addDish(dish: SharedObjects.Dish):Unit{
+    fun addDish(dish: SharedObjects.Dish):Unit{
         SharedObjects.menuCollection
             .add(dish)
             .addOnSuccessListener {
