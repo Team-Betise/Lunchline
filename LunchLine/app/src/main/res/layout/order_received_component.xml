@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_received_component"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/_25pxv">
+    <FrameLayout
+        android:id="@+id/itemContainerWrapper"
+        android:layout_width="@dimen/_242pxh"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10pxh">
+
+        <LinearLayout
+            android:id="@+id/itemContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="@dimen/_10pxh"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:id="@+id/itemImageFrame"
+                style="@style/groupStylewhite_1"
+                android:layout_width="@dimen/_66pxh"
+                android:layout_height="@dimen/_72pxv"
+                android:layout_marginTop="@dimen/_10pxv">
+
+                <ImageView
+                    android:id="@+id/itemImageView"
+                    android:layout_width="59dp"
+                    android:layout_height="@dimen/_53pxh"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginStart="@dimen/_5pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_4pxh"
+                    android:layout_marginBottom="@dimen/_4pxv"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/img_77325frappucci"
+                    tools:ignore="ContentDescription"
+                    tools:src="@drawable/img_77325frappucci" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/itemDataContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16pxh"
+                android:layout_marginTop="@dimen/_5pxv"
+                android:layout_marginBottom="@dimen/_32pxv"
+                android:layout_weight="0.48"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemName"
+                    style="@style/txtPoppinsmedium12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="@{orderRecievedVM.orderRecievedModel.txtFoodItem}"
+                    tools:text="@string/lbl_food_item" />
+
+                <TextView
+                    android:id="@+id/itemPrice"
+                    style="@style/txtPoppinsmedium14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5pxv"
+                    android:layout_marginEnd="@dimen/_10pxh"
+                    android:ellipsize="end"
+                    android:lineSpacingExtra="@dimen/_1pxh"
+                    android:singleLine="true"
+                    android:text="@{orderRecievedVM.orderRecievedModel.txtPrice}"
+                    tools:text="@string/lbl_35" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageGroup48095563"
+            android:layout_width="@dimen/_160pxh"
+            android:layout_height="@dimen/_20pxh"
+            android:layout_gravity="bottom|end"
+            android:layout_marginStart="@dimen/_10pxh"
+            android:layout_marginTop="@dimen/_10pxv"
+            android:layout_marginBottom="@dimen/_7pxv"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_group48095563"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/img_group48095563" />
+    </FrameLayout>
+    <EditText
+        android:background="@drawable/rectangle_bg_green_902_radius_14"
+        android:ellipsize="end"
+        android:hint="@string/msg_type_your_revie"
+        android:id="@+id/reviewInput"
+        android:inputType="text"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_2pxh"
+        android:layout_marginStart="@dimen/_3pxh"
+        android:layout_marginTop="@dimen/_18pxv"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_20pxv"
+        android:layout_marginLeft="-10dp"
+        android:paddingBottom="@dimen/_30pxv"
+        android:paddingEnd="@dimen/_30pxh"
+        android:paddingStart="@dimen/_6pxh"
+        android:paddingTop="@dimen/_5pxv"
+        android:singleLine="true"
+        android:text="Type your review here..."
+        android:textColorHint="@color/white_A700"
+        style="@style/etSolidRounded_3" tools:ignore="Autofill"/>
+</LinearLayout>
