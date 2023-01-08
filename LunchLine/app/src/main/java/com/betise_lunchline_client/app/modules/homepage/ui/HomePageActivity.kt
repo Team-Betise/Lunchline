@@ -49,7 +49,6 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                         document.data["EndTime"] as com.google.firebase.Timestamp,
                         document.data["Days"] as ArrayList<Boolean>,
                     )
-                    Toast.makeText(this, dish.ItemName, Toast.LENGTH_SHORT).show()
                     SharedObjects.dishes.add(dish)
                 }
             }
