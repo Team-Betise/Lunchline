@@ -93,5 +93,20 @@ data class AddDishModel(
   /**
    * TODO Replace with dynamic value
    */
-  var etFrameTwoOneValue: String? = null
+  var etFrameTwoOneValue: String? = null,
+
+  /**
+   * TODO Replace with dynamic value
+   */
+  var etFromHrs: String? = null,
+
+  var etFromMin: String? = null,
+
+  var etToHrs: String? = null,
+
+  var etToMin: String? = null,
+
+  var etETAHrs: String? = null,
+
+  var etETAMin: String? = null,
 )

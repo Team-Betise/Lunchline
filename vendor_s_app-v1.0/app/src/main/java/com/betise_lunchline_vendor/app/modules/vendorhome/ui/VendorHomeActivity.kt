@@ -15,6 +15,7 @@ import com.betise_lunchline_vendor.app.modules.vendorprovidorone.ui.VendorProvid
 import kotlin.String
 import kotlin.Unit
 
+
 class VendorHomeActivity : BaseActivity<ActivityVendorHomeBinding>(R.layout.activity_vendor_home) {
   private val viewModel: VendorHomeVM by viewModels<VendorHomeVM>()
 
@@ -30,6 +31,7 @@ class VendorHomeActivity : BaseActivity<ActivityVendorHomeBinding>(R.layout.acti
     }
     binding.linearHandout.setOnClickListener {
       val destIntent = EditPageTwoActivity.getIntent(this, null)
+      DishPageActivity.setfieldvals();
       startActivity(destIntent)
     }
     binding.linearHandout1.setOnClickListener {
