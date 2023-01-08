@@ -9,7 +9,9 @@ import android.widget.ToggleButton
 import androidx.activity.viewModels
 import com.betise_lunchline_vendor.app.R
 import com.betise_lunchline_vendor.app.appcomponents.base.BaseActivity
+import com.betise_lunchline_vendor.app.appcomponents.di.MyApp
 import com.betise_lunchline_vendor.app.databinding.ActivityAddDishBinding
+import com.betise_lunchline_vendor.app.modules.adddish.data.model.AddDishModel
 import com.betise_lunchline_vendor.app.modules.adddish.`data`.viewmodel.AddDishVM
 import com.betise_lunchline_vendor.app.modules.editpagetwo.ui.EditPageTwoActivity
 import kotlin.String
@@ -17,6 +19,7 @@ import kotlin.Unit
 
 class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_add_dish) {
   private val viewModel: AddDishVM by viewModels<AddDishVM>()
+  private var dishName = ""
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -28,6 +31,8 @@ class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_a
       finish()
     }
     binding.btnSave.setOnClickListener {
+//      saveData()
+      println(AddDishVM().addDishModel.value?.etFrameTwoValue)
       val destIntent = EditPageTwoActivity.getIntent(this, null)
       startActivity(destIntent)
     }
@@ -66,6 +71,9 @@ class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_a
     }
 
   }
+//  fun saveData(){
+////    dishName =
+//  }
 
   companion object {
     const val TAG: String = "ADD_DISH_ACTIVITY"
