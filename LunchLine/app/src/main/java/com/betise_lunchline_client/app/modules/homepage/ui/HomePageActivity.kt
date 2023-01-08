@@ -4,12 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat.startActivity
 import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityHomePageBinding
@@ -25,6 +27,7 @@ import kotlin.Unit
 class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity_home_page) {
     private val viewModel: HomePageVM by viewModels<HomePageVM>()
     private lateinit var linearHomePage: LinearLayout
+    public var dishid: Int = 0
 
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -35,7 +38,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 
         val inflater: android.view.LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as
                 android.view.LayoutInflater
-
+                
         SharedObjects.dishes.clear()
         SharedObjects.dish_ids.clear()
         SharedObjects.menuCollection
@@ -61,18 +64,20 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 
         // Grab a reference to the component defined in dish_component.xml
 
-        for (i in 1..10) {
+        for (i in 0..dishes.size-1) {
             val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
 //      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
             val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
             val textView: TextView = layout.findViewById(R.id.txtDishName)
+            textView.text = dishes[i].ItemName
             val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
             addButton.setOnClickListener {
                 val destIntent = DishPageActivity.getIntent(this, null)
+                destIntent.putExtra("dishid", i)
                 startActivity(destIntent)
             }
 
-            textView.text = "Dish #$i"
+//            textView.text = "Dish #$i"
             linearHomePage.addView(dishComponent)
         }
     }
