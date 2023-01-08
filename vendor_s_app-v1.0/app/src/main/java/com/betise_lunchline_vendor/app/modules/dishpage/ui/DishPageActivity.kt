@@ -8,6 +8,7 @@ import com.betise_lunchline_vendor.app.R
 import com.betise_lunchline_vendor.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_vendor.app.databinding.ActivityDishPageBinding
 import com.betise_lunchline_vendor.app.modules.dishpage.`data`.viewmodel.DishPageVM
+import com.betise_lunchline_vendor.app.modules.SharedObjects
 import kotlin.String
 import kotlin.Unit
 
@@ -35,8 +36,9 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
       return destIntent
     }
 
-    fun setfieldvals(): Unit {
+    fun setfieldvals(dish: SharedObjects.Dish): Unit {
 //      TODO("Not yet implemented")
+
     }
   }
 
