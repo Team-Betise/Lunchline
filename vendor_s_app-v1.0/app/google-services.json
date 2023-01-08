@@ -1,0 +1,146 @@
+{
+  "project_info": {
+    "project_number": "414455027247",
+    "firebase_url": "https://lunchline-373509-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "lunchline-373509",
+    "storage_bucket": "lunchline-373509.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414455027247:android:6c81cf07d020d67c4198da",
+        "android_client_info": {
+          "package_name": "com.betise.fuckinghell"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414455027247-6tu77j2mo9bqeblin5qj3db5og90e7t6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise.fuckinghell",
+            "certificate_hash": "5a0af0c49e8672efe573187c162f75847ef1764b"
+          }
+        },
+        {
+          "client_id": "414455027247-ishgf9dgk0cdjrh9d51pmsoagrr5uptn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOyUbB3AEdU1oXAhAhuKaN4LlZ7ZZqXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414455027247-7mgkjfkmlmc23h3fbc1r5tqp9qdr3gmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414455027247:android:189976972b2409b54198da",
+        "android_client_info": {
+          "package_name": "com.betise_lunchline_client.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414455027247-8c40rkom3c6i9nfemj2ahv6ldi2ljvr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise_lunchline_client.app",
+            "certificate_hash": "48576a850dd2f35cfad2efe97d3ac2f452a42ffb"
+          }
+        },
+        {
+          "client_id": "414455027247-kflv7ohq9ph22fflqho7ebse96gbsusg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise_lunchline_client.app",
+            "certificate_hash": "a164dd9d16c6dd8a69eb5c6979a6061a67e3821a"
+          }
+        },
+        {
+          "client_id": "414455027247-loiupmrhrr0a9ki9g47nnfft5qnpgod1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise_lunchline_client.app",
+            "certificate_hash": "83eef3bd820572502c80068aad0a031948e0a7e2"
+          }
+        },
+        {
+          "client_id": "414455027247-n4ks0bftlfvs8n5r08muh72a97abnorr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise_lunchline_client.app",
+            "certificate_hash": "5a0af0c49e8672efe573187c162f75847ef1764b"
+          }
+        },
+        {
+          "client_id": "414455027247-ishgf9dgk0cdjrh9d51pmsoagrr5uptn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOyUbB3AEdU1oXAhAhuKaN4LlZ7ZZqXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414455027247-7mgkjfkmlmc23h3fbc1r5tqp9qdr3gmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414455027247:android:1f24d84685f95b884198da",
+        "android_client_info": {
+          "package_name": "com.betise_lunchline_vendor.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414455027247-k9fmkpdnpikl6pjd9n33vd89jutjd22b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.betise_lunchline_vendor.app",
+            "certificate_hash": "48576a850dd2f35cfad2efe97d3ac2f452a42ffb"
+          }
+        },
+        {
+          "client_id": "414455027247-ishgf9dgk0cdjrh9d51pmsoagrr5uptn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOyUbB3AEdU1oXAhAhuKaN4LlZ7ZZqXFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414455027247-7mgkjfkmlmc23h3fbc1r5tqp9qdr3gmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

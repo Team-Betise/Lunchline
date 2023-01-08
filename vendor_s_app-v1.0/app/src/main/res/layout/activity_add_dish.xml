@@ -7,12 +7,12 @@
     <LinearLayout
         android:id="@+id/linearColumnarrowleft"
         style="@style/groupStylegray_901"
-        android:layout_width="370dp"
-        android:layout_height="700dp"
-        android:layout_marginStart="@dimen/_25pxh"
-        android:layout_marginTop="@dimen/_25pxv"
-        android:layout_marginEnd="@dimen/_24pxh"
-        android:layout_marginBottom="@dimen/_139pxv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -118,32 +118,52 @@
                             android:text="@{addDishVM.addDishModel.txtEnterDishDesc}"
                             tools:text="@string/msg_enter_dish_desc" />
 
-                        <LinearLayout
-                            android:id="@+id/linearColumndescription"
-                            style="@style/groupStylegray_50cornerRadius"
+                        <EditText
+                            android:id="@+id/etDescription"
+                            style="@style/etSolidRounded"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_9pxh"
-                            android:layout_marginTop="@dimen/_16pxv"
-                            android:gravity="center_horizontal"
-                            android:orientation="vertical">
+                            android:layout_marginTop="@dimen/_28pxv"
+                            android:background="@drawable/rectangle_bg_gray_50_radius_8"
+                            android:ellipsize="end"
+                            android:hint="@string/lbl_description"
+                            android:inputType="text"
+                            android:lineSpacingExtra="@dimen/_1pxh"
+                            android:paddingStart="@dimen/_16pxh"
+                            android:paddingTop="@dimen/_19pxv"
+                            android:paddingEnd="@dimen/_30pxh"
+                            android:paddingBottom="@dimen/_19pxv"
+                            android:singleLine="true"
+                            android:text="@={addDishVM.addDishModel.etFrameTwoOneValue}"
+                            android:textColorHint="@color/gray_400"
+                            tools:ignore="Autofill" />
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/linearColumndescription"-->
+<!--                            style="@style/groupStylegray_50cornerRadius"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginStart="@dimen/_9pxh"-->
+<!--                            android:layout_marginTop="@dimen/_16pxv"-->
+<!--                            android:gravity="center_horizontal"-->
+<!--                            android:orientation="vertical">-->
 
-                            <TextView
-                                android:id="@+id/txtDescription"
-                                style="@style/txtInterregular14"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="@dimen/_16pxh"
-                                android:layout_marginTop="@dimen/_26pxv"
-                                android:layout_marginEnd="@dimen/_16pxh"
-                                android:layout_marginBottom="@dimen/_137pxv"
-                                android:ellipsize="end"
-                                android:gravity="start"
-                                android:lineSpacingExtra="@dimen/_1pxh"
-                                android:singleLine="true"
-                                android:text="@{addDishVM.addDishModel.txtDescription}"
-                                tools:text="@string/lbl_description" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:id="@+id/txtDescription"-->
+<!--                                style="@style/txtInterregular14"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginStart="@dimen/_16pxh"-->
+<!--                                android:layout_marginTop="@dimen/_26pxv"-->
+<!--                                android:layout_marginEnd="@dimen/_16pxh"-->
+<!--                                android:layout_marginBottom="@dimen/_137pxv"-->
+<!--                                android:ellipsize="end"-->
+<!--                                android:gravity="start"-->
+<!--                                android:lineSpacingExtra="@dimen/_1pxh"-->
+<!--                                android:singleLine="true"-->
+<!--                                android:text="@{addDishVM.addDishModel.txtDescription}"-->
+<!--                                tools:text="@string/lbl_description" />-->
+<!--                        </LinearLayout>-->
                     </LinearLayout>
 
                     <LinearLayout
@@ -172,7 +192,7 @@
                         <EditText
                             android:id="@+id/etFrameTwoOne"
                             style="@style/etSolidRounded"
-                            android:layout_width="match_parent"
+                            android:layout_width="195dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_9pxh"
                             android:layout_marginTop="@dimen/_21pxv"
@@ -404,7 +424,6 @@
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
-
                     <TextView
                         android:id="@+id/txtChooseDayAvai"
                         style="@style/txtIntersemibold16"
@@ -420,12 +439,119 @@
                         tools:text="@string/msg_choose_day_avai" />
 
                     <LinearLayout
+                        android:id="@+id/Toggles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonMon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Mon"
+                            android:textOn="Mon" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonTue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Tue"
+                            android:textOn="Tue" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonWed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Wed"
+                            android:textOn="Wed" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonThu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_10pxv"
+                            android:layout_marginTop="@dimen/_15pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Thu"
+                            android:textOn="Thu" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Toggles2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_40pxh"
+                        android:layout_marginTop="@dimen/_10pxv"
+                        android:layout_weight="0.5"
+                        android:orientation="horizontal">
+
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonFri"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Fri"
+                            android:textOn="Fri" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonSat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Sat"
+                            android:textOn="Sat" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButtonSun"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_12pxv"
+                            android:layout_marginTop="@dimen/_1pxv"
+                            android:layout_marginEnd="@dimen/_1pxv"
+                            android:layout_marginBottom="@dimen/_1pxv"
+                            android:text="ToggleButton"
+                            android:textOff="Sun"
+                            android:textOn="Sun" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
                         android:id="@+id/linearColumnestimatedtime"
                         style="@style/groupStylecornerRadius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_2pxh"
-                        android:layout_marginTop="@dimen/_154pxv"
+                        android:layout_marginTop="@dimen/_50pxv"
                         android:layout_marginEnd="@dimen/_10pxh"
                         android:orientation="vertical">
 
@@ -454,7 +580,7 @@
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnHrsTwo"
                                 style="@style/btnSolidRounded_2"
-                                android:layout_width="@dimen/_50pxh"
+                                android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_53pxh"
                                 android:ellipsize="end"
                                 android:gravity="center"
@@ -471,7 +597,7 @@
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinTwo"
                                 style="@style/btnSolidRounded_2"
-                                android:layout_width="@dimen/_51pxh"
+                                android:layout_width="wrap_content"
                                 android:layout_height="@dimen/_53pxh"
                                 android:layout_marginStart="@dimen/_13pxh"
                                 android:ellipsize="end"
@@ -506,6 +632,7 @@
                         android:text="@string/lbl_save"
                         android:textAllCaps="false"
                         tools:text="@string/lbl_save" />
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

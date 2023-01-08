@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.betise_lunchline_vendor.app.R
 import com.betise_lunchline_vendor.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_vendor.app.databinding.ActivityVendorHomeBinding
+import com.betise_lunchline_vendor.app.modules.adddish.ui.AddDishActivity
 import com.betise_lunchline_vendor.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_vendor.app.modules.editpagetwo.ui.EditPageTwoActivity
 import com.betise_lunchline_vendor.app.modules.vendorhome.`data`.viewmodel.VendorHomeVM
@@ -32,7 +33,7 @@ class VendorHomeActivity : BaseActivity<ActivityVendorHomeBinding>(R.layout.acti
       startActivity(destIntent)
     }
     binding.linearHandout1.setOnClickListener {
-      val destIntent = DishPageActivity.getIntent(this, null)
+      val destIntent = AddDishActivity.getIntent(this, null)
       startActivity(destIntent)
     }
   }
