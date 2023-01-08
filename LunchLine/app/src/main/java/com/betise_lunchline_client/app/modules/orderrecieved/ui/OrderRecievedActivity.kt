@@ -14,6 +14,8 @@ import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityOrderRecievedBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.cart
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishtest
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.orderrecieved.`data`.viewmodel.OrderRecievedVM
@@ -34,14 +36,14 @@ class OrderRecievedActivity :
             android.view.LayoutInflater
 
     val orderedLength = 4
-    for (i in 1..orderedLength) {
+    for (i in 0..cart.size-1) {
       // Create the ordered item
       val orderItemComponent: View = inflater.inflate(R.layout.order_received_component, null)
       val reviewBox: EditText = orderItemComponent.findViewById<EditText>(R.id.reviewInput)
       val itemImg: ImageView = orderItemComponent.findViewById<ImageView>(R.id.itemImageView)
 
-      orderItemComponent.findViewById<TextView>(R.id.itemName).text = "Item $i"
-      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = "Price $i"
+      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishtest[i].ItemName
+      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishtest[i].ItemCost.toString()
 
       orderedItemsContainer.addView(orderItemComponent)
       }

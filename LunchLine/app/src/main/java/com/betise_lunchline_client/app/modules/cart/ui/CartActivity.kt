@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.viewModels
@@ -52,9 +53,9 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
       for (i in 0..cart.size - 1) {
         totalprice += dishtest[i].ItemCost.toInt() * cart.get(dishtest[i])!!
       }
-      println(totalprice)
-      val textView:TextView = findViewById(R.id.txt1000)
-      textView.text = totalprice.toString()
+//      change R.id.txt1000 to total price
+//      check path of R.id.txt1000 in cartitemData
+
       cartItemsContainer.addView(cartItem)
     }
   }

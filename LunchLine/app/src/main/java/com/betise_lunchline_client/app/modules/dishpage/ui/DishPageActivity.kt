@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
@@ -33,8 +34,9 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
         dishid = intent.getIntExtra("dishid", 0)
         binding.dishPageVM = viewModel
         println(dishtest[dishid].ItemName)
-        val textView: TextView = findViewById(R.id.txtDishName)
-        textView.text = dishtest[dishid].ItemName
+        findViewById<LinearLayout>(R.id.linearDishpage).findViewById<TextView>(R.id.txtDishName).text = dishtest[dishid].ItemName
+//        val textView: TextView = findViewById(R.id.txtDishName)
+//        textView.text = dishtest[dishid].ItemName
         val textView2: TextView = findViewById(R.id.txtSeventy)
         textView2.text = dishtest[dishid].ItemCost.toString()
     }
