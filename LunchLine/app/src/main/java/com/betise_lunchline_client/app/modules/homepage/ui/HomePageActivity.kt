@@ -64,12 +64,12 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 
         // Grab a reference to the component defined in dish_component.xml
 
-        for (i in 0..dishes.size-1) {
+        for (i in 0..SharedObjects.dishes.size-1) {
             val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
 //      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
             val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
             val textView: TextView = layout.findViewById(R.id.txtDishName)
-            textView.text = dishes[i].ItemName
+            textView.text = SharedObjects.dishes[i].ItemName
             val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
             addButton.setOnClickListener {
                 val destIntent = DishPageActivity.getIntent(this, null)
