@@ -49,6 +49,9 @@ data class Signup2TwoModel(
   /**
    * TODO Replace with dynamic value
    */
-  var txtResend: String? = MyApp.getInstance().resources.getString(R.string.lbl_resend)
+  var txtResend: String? = MyApp.getInstance().resources.getString(R.string.lbl_resend),
+
+  var edtOTP: String? = null
+
 
 )
