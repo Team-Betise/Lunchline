@@ -4,18 +4,12 @@ import android.content.Context
 import android.content.Intent
 import android.media.Rating
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.activity.viewModels
 import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityOrderRecievedBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
 import com.betise_lunchline_client.app.modules.SharedObjects.Companion.cart
-import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishtest
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.orderrecieved.`data`.viewmodel.OrderRecievedVM
@@ -24,8 +18,7 @@ import kotlin.Unit
 
 class OrderRecievedActivity :
     BaseActivity<ActivityOrderRecievedBinding>(R.layout.activity_order_recieved) {
-  private val viewModel: OrderRecievedVM by viewModels<OrderRecievedVM>()
-  private lateinit var orderedItemsContainer : LinearLayout
+    private val viewModel: OrderRecievedVM by viewModels<OrderRecievedVM>()
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -42,27 +35,27 @@ class OrderRecievedActivity :
       val reviewBox: EditText = orderItemComponent.findViewById<EditText>(R.id.reviewInput)
       val itemImg: ImageView = orderItemComponent.findViewById<ImageView>(R.id.itemImageView)
 
-      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishtest[i].ItemName
-      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishtest[i].ItemCost.toString()
+      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishes[i].ItemName
+      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishes[i].ItemCost.toString()
 
       orderedItemsContainer.addView(orderItemComponent)
       }
     }
 
-  override fun setUpClicks(): Unit {
-//    binding.linearRowpngeggninetynineOne.setOnClickListener {
-//      val destIntent = DishPageActivity.getIntent(this, null)
-//      startActivity(destIntent)
-//    }
-    binding.btnGoToHome.setOnClickListener {
-      val destIntent = HomePageActivity.getIntent(this, null)
-      startActivity(destIntent)
+    override fun setUpClicks(): Unit {
+        binding.linearRowpngeggninetynineOne.setOnClickListener {
+            val destIntent = DishPageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+        binding.btnGoToHome.setOnClickListener {
+            val destIntent = HomePageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+        binding.linearRowpngeggninetynine.setOnClickListener {
+            val destIntent = DishPageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
     }
-//    binding.linearRowpngeggninetynine.setOnClickListener {
-//      val destIntent = DishPageActivity.getIntent(this, null)
-//      startActivity(destIntent)
-//    }
-  }
 
     private fun rateDish(dish:SharedObjects.Dish, rating: Int): Unit {
         SharedObjects.menuCollection
