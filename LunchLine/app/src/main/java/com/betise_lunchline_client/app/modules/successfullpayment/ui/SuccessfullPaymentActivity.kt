@@ -10,6 +10,7 @@ import com.betise_lunchline_client.app.databinding.ActivitySuccessfullPaymentBin
 import com.betise_lunchline_client.app.modules.SharedObjects
 import com.betise_lunchline_client.app.modules.notificationcomplete.ui.NotificationCompleteActivity
 import com.betise_lunchline_client.app.modules.successfullpayment.`data`.viewmodel.SuccessfullPaymentVM
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FieldValue.serverTimestamp
 import com.google.firebase.firestore.local.ReferenceSet
@@ -40,7 +41,7 @@ class SuccessfullPaymentActivity :
 
     private fun buildOrder(): Unit {
         var amount:Long = 0
-        var timePlaced = serverTimestamp()
+        var timePlaced = Timestamp.now()
         for(i in 0 until SharedObjects.cart.size)
         {
             amount += buildItem(i, timePlaced)
@@ -56,8 +57,8 @@ class SuccessfullPaymentActivity :
     }
 
     // Fix endTime
-    private fun buildItem(Idx: Int, timePlaced: FieldValue): Long {
-        var endTime = timePlaced
+    private fun buildItem(Idx: Int, timePlaced: Timestamp): Long {
+        var endTime = Timestamp(timePlaced.seconds + SharedObjects.dishes[Idx].ETA.seconds, 0)
         val item = SharedObjects.Item(SharedObjects.dishes[Idx], endTime, "Cooking")
         items.add(item)
         val itemdb = SharedObjects.ItemDB(SharedObjects.menuCollection.document(SharedObjects.dish_ids[Idx]), endTime, "Cooking")

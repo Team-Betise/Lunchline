@@ -17,6 +17,7 @@ import com.betise_lunchline_client.app.modules.SharedObjects
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.`data`.viewmodel.HomePageVM
 import com.betise_lunchline_client.app.modules.profilepage.ui.ProfilePageActivity
+import com.google.firebase.Timestamp
 import kotlin.Boolean
 import kotlin.String
 import kotlin.Unit
@@ -48,9 +49,10 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                         document.data["CurrentAvailability"] as Boolean,
                         document.data["Rating"] as Double,
                         document.data["ReviewCount"] as Long,
-                        document.data["StartTime"] as com.google.firebase.Timestamp,
-                        document.data["EndTime"] as com.google.firebase.Timestamp,
+                        document.data["StartTime"] as Timestamp,
+                        document.data["EndTime"] as Timestamp,
                         document.data["Days"] as ArrayList<Boolean>,
+                        document.data["ETA"] as Timestamp,
                     )
                     SharedObjects.dishes.add(dish)
                     SharedObjects.dish_ids.add(document.id)

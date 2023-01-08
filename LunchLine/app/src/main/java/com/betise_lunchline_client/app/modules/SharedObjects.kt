@@ -27,7 +27,7 @@ class SharedObjects {
         val StartTime: Timestamp,
         val EndTime: Timestamp,
         val Days: ArrayList<Boolean>,
-        val ETA: Long,
+        val ETA: Timestamp,
     )
     data class Item(
         val dish: Dish,
