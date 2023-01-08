@@ -44,26 +44,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_21pxv"
                 android:layout_width="match_parent" android:orientation="horizontal">
+
                 <EditText
                     android:id="@+id/edtOTP"
-                    android:layout_width="wrap_content"
+                    android:layout_width="@dimen/_289pxv"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_8pxh"
-                    android:layout_marginStart="@dimen/_60pxh"
+                    android:layout_marginStart="@dimen/_48pxh"
+                    android:layout_marginEnd="@dimen/_28pxh"
                     android:background="@drawable/rectangle_bg_gray_50_radius_8"
                     android:ellipsize="end"
+                    android:hint="OTP"
                     android:inputType="number"
                     android:maxLength="6"
-                    android:hint="OTP"
-                    android:paddingEnd="@dimen/_90pxh"
                     android:paddingStart="@dimen/_90pxh"
                     android:paddingTop="@dimen/_16pxv"
+                    android:paddingEnd="@dimen/_90pxh"
                     android:paddingBottom="@dimen/_16pxv"
                     android:text="@={signup2TwoVM.signup2TwoModel.edtOTP}"
                     android:textColor="@color/gray_900"
                     android:textColorHint="@color/gray_900"
-                    android:textSize="@dimen/_16pxh"
-                    />
+                    android:textSize="@dimen/_16pxh" />
             </LinearLayout>
             <TextView android:ellipsize="end"
                 android:gravity="center_horizontal"

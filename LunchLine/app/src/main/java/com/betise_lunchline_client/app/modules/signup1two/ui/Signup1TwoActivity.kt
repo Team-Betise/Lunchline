@@ -3,6 +3,7 @@ package com.betise_lunchline_client.app.modules.signup1two.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import androidx.activity.viewModels
 import com.betise_lunchline_client.app.R
@@ -39,7 +40,8 @@ class Signup1TwoActivity : BaseActivity<ActivitySignup1TwoBinding>(R.layout.acti
     override fun setUpClicks(): Unit {
         binding.btnGetOtp.setOnClickListener {
             val phNo = findViewById<EditText>(R.id.etMobileNo)
-            phoneNo = "+91" + phNo.text.toString()
+            phoneNo = phNo.text.toString()
+            Log.d("phoneNo", phoneNo)
 
             val phoneOptions = phoneOptionsBuilder.setPhoneNumber("+91$phoneNo").build()
             PhoneAuthProvider.verifyPhoneNumber(phoneOptions)

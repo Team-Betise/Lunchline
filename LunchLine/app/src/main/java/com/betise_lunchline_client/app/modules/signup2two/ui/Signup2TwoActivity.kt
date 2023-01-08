@@ -11,6 +11,7 @@ import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivitySignup2TwoBinding
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.login.ui.LoginActivity
+import com.betise_lunchline_client.app.modules.signup1two.ui.Signup1TwoActivity
 import com.betise_lunchline_client.app.modules.signup2two.`data`.viewmodel.Signup2TwoVM
 import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseException
@@ -29,12 +30,15 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
     private lateinit var phoneNo: String
     private lateinit var credential: PhoneAuthCredential
 
+
     override fun onInitialized(): Unit {
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         binding.signup2TwoVM = viewModel
 
         val intent = getIntent();
         phoneNo = intent.getStringExtra("phoneNo").toString()
+
+
     }
 
     override fun setUpClicks(): Unit {
@@ -42,29 +46,37 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
             val signup2:EditText = findViewById(R.id.edtOTP)
             val OTP=signup2.text.toString()
 
+            if (codeSent) {
+                credential = PhoneAuthProvider.getCredential(callbacks.storedVerificationId, OTP)
+                callbacks.signInWithPhoneAuthCredential(credential)
+                if (changeIntent) {
+                    val destIntent = HomePageActivity.getIntent(this, null)
+                    startActivity(destIntent)
+                }
+            }
 
-
-
-            val destIntent = HomePageActivity.getIntent(this, null)
-            startActivity(destIntent)
 
         }
     }
 
     companion object {
         const val TAG: String = "SIGNUP2TWO_ACTIVITY"
-
+        var changeIntent = false
+        var codeSent = false
 
         fun getIntent(context: Context, bundle: Bundle?): Intent {
             val destIntent = Intent(context, Signup2TwoActivity::class.java)
             destIntent.putExtra("bundle", bundle)
             return destIntent
         }
+
+
+
     }
 
     object callbacks : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
-        private lateinit var storedVerificationId: String
+        lateinit var storedVerificationId: String
         private val auth = Firebase.auth
 
 
@@ -79,25 +91,28 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
             signInWithPhoneAuthCredential(credential)
         }
 
-        private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
-            auth.signInWithCredential(credential)
-                .addOnCompleteListener(this) { task : Task<AuthResult> ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        Log.d(LoginActivity.TAG, "signInWithCredential:success")
+        fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
+            Log.d(LoginActivity.TAG, "signInWithPhoneAuthCredential:$credential")
+            val task = auth.signInWithCredential(credential)
+            task.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(LoginActivity.TAG, "signInWithCredential:success")
 
-                        val user = task.result?.user
-                    } else {
-                        // Sign in failed, display a message and update the UI
-                        Log.w(LoginActivity.TAG, "signInWithCredential:failure", task.exception)
-                        if (task.exception is FirebaseAuthInvalidCredentialsException) {
-                            // The verification code entered was invalid
-                        }
-                        // Update UI
+                    val user = task.result?.user
+                    Signup2TwoActivity.changeIntent = true
+                } else {
+                    // Sign in failed, display a message and update the UI
+                    Log.w(LoginActivity.TAG, "signInWithCredential:failure", task.exception)
+                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
+                        // The verification code entered was invalid
                     }
+                    // Update UI
                 }
-        }
 
+            }
+
+        }
 
 
 
@@ -123,17 +138,16 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
             // now need to ask the user to enter the code and then construct a credential
             // by combining the code with a verification ID.
             Log.d(LoginActivity.TAG, "onCodeSent:$verificationId")
-
             // Save verification ID and resending token so we can use them later
             storedVerificationId = verificationId
             resendToken = token
+            Signup2TwoActivity.codeSent = true
+
 
         }
 
 
-    }
-}
 
-private fun <TResult> Task<TResult>.addOnCompleteListener(callbacks: Signup2TwoActivity.callbacks, function: (Task<TResult>) -> Unit) {
+    }
 
 }
