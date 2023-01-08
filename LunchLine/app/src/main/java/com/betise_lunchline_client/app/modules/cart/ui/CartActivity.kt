@@ -13,7 +13,7 @@ import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.appcomponents.views.TimePickerFragment
 import com.betise_lunchline_client.app.databinding.ActivityCartBinding
 import com.betise_lunchline_client.app.modules.SharedObjects.Companion.cart
-import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishtest
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishes
 import com.betise_lunchline_client.app.modules.cart.`data`.viewmodel.CartVM
 import com.betise_lunchline_client.app.modules.successfullpayment.ui.SuccessfullPaymentActivity
 import java.util.Date
@@ -40,17 +40,17 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
       val cartItemData : LinearLayout = cartItem.findViewById<LinearLayout>(R.id.itemDataContainer)
 
       // Set the item name, price, quantity
-      cartItemData.findViewById<TextView>(R.id.itemName).text = dishtest[i].ItemName // Item name
-      cartItemData.findViewById<TextView>(R.id.itemPrice).text = dishtest[i].ItemCost.toString() // Item price
+      cartItemData.findViewById<TextView>(R.id.itemName).text = dishes[i].ItemName // Item name
+      cartItemData.findViewById<TextView>(R.id.itemPrice).text = dishes[i].ItemCost.toString() // Item price
       cartItemData.findViewById<LinearLayout>(R.id.linearRowfour).findViewById<TextView>(R.id.itemQuantity).text =
-        cart.get(dishtest[i]).toString() // Item quantity
+        cart.get(dishes[i]).toString() // Item quantity
 
 //      val removeButton: AppCompatButton = layout.findViewById(R.id.btnRemove)
 //      removeButton.setOnClickListener {
 //        cartItemsContainer.removeView(cartItem)
 //      }
       for (i in 0..cart.size - 1) {
-        totalprice += dishtest[i].ItemCost.toInt() * cart.get(dishtest[i])!!
+        totalprice += dishes[i].ItemCost.toInt() * cart.get(dishes[i])!!
       }
 //      change R.id.txt1000 to total price
 //      check path of R.id.txt1000 in cartitemData

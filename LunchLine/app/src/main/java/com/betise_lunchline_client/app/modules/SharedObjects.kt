@@ -68,7 +68,7 @@ class SharedObjects {
         var order: Order? = null
         var orderDB: OrderDB? = null
         var cart:HashMap<Dish, Int> = hashMapOf()
-        var dishtest:MutableList<Dish> = mutableListOf<Dish>()
+//        var dishtest:MutableList<Dish> = mutableListOf<Dish>()
     }
 
 }
