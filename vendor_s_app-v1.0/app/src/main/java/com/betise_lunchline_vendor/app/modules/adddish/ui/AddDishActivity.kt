@@ -94,6 +94,18 @@ class AddDishActivity : BaseActivity<ActivityAddDishBinding>(R.layout.activity_a
 	  }
 	}
 
+    private fun addDish(dish: SharedObjects.Dish):Unit{
+        SharedObjects.menuCollection
+            .add(dish)
+            .addOnSuccessListener {
+                Toast.makeText(this, "Dish added successfully", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "Error adding dish", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+
   }
   fun saveData() {
       val edit:EditText=findViewById(R.id.etFrameTwo)
