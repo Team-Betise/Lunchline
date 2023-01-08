@@ -13,6 +13,7 @@ import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.appcomponents.views.DatePickerFragment.Companion.TAG
 import com.betise_lunchline_client.app.databinding.ActivityLoginBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.db
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.login.`data`.viewmodel.LoginVM
 import com.betise_lunchline_client.app.modules.signup1two.ui.Signup1TwoActivity
@@ -23,6 +24,8 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.ActionCodeSettings
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlin.String
 import kotlin.Unit
 
@@ -67,19 +70,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         val response: IdpResponse? = result.idpResponse
         if (result.resultCode == RESULT_OK) {
             // Successfully signed in
-            data class User(
-                val Name: String,
-                val Email: String,
-                val Photo: String,
-                val Phone: String,
-                val Profile: String,
-                val OpenID: String,
-            )
             user = FirebaseAuth.getInstance().currentUser
             user?.let {
                 // Name, email address, and profile photo Url
                 val name = user!!.displayName
                 val email = user!!.email
+                SharedObjects.user_email = email.toString()
                 val photoUrl = user!!.photoUrl
 
                 // Check if user's email is verified
@@ -89,15 +85,27 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
                 // authenticate with your backend server, if you have one. Use
                 // FirebaseUser.getToken() instead.
                 val uid = user!!.uid
-                val user = User(name.toString(), email.toString(), photoUrl.toString(), "", "", "")
-                SharedObjects.db.collection("users")
-                    .add(user)
-                    .addOnSuccessListener { documentReference ->
-                        Log.d(TAG, "DocumentSnapshot written with ID: ${documentReference.id}")
+                val userRef = db.collection("users").document(email!!)
+                userRef.get().addOnCompleteListener{ task ->
+                    if(task.isSuccessful){
+                        val document = task.result
+                        if(document!!.exists()){
+                            Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                        }else{
+                            val user = SharedObjects.User(name.toString(), email.toString(), photoUrl.toString(), "", "", "")
+                            SharedObjects.db.collection("users")
+                                .document(email!!).set(user)
+                                .addOnSuccessListener {
+                                    Log.d(TAG, "DocumentSnapshot written")
+                                }
+                                .addOnFailureListener { e ->
+                                    Log.w(TAG, "Error adding document", e)
+                                }
+                        }
+                    }else{
+                        Log.d(TAG, "onSignInResult: ${task.exception}")
                     }
-                    .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
+                }
             }
 
             val destIntent = HomePageActivity.getIntent(this, null)
