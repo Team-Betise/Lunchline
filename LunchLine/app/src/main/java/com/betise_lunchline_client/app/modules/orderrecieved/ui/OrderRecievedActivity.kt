@@ -62,21 +62,6 @@ class OrderRecievedActivity :
 //    }
   }
 
-    override fun setUpClicks(): Unit {
-        binding.linearRowpngeggninetynineOne.setOnClickListener {
-            val destIntent = DishPageActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-        binding.btnGoToHome.setOnClickListener {
-            val destIntent = HomePageActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-        binding.linearRowpngeggninetynine.setOnClickListener {
-            val destIntent = DishPageActivity.getIntent(this, null)
-            startActivity(destIntent)
-        }
-    }
-
     private fun rateDish(dish:SharedObjects.Dish, rating: Int): Unit {
         SharedObjects.menuCollection
             .whereEqualTo("ItemName", dish.ItemName)
