@@ -22,6 +22,7 @@ class SharedObjects {
         val Desc: String,
         val CurrentAvailability: Boolean,
         val Rating: Double,
+        val ReviewCount: Long,
         val StartTime: Timestamp,
         val EndTime: Timestamp,
         val Days: ArrayList<Boolean>,

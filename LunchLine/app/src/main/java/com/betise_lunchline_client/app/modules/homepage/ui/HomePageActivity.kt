@@ -46,6 +46,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                         document.data["Desc"] as String,
                         document.data["CurrentAvailability"] as Boolean,
                         document.data["Rating"] as Double,
+                        document.data["ReviewCount"] as Long,
                         document.data["StartTime"] as com.google.firebase.Timestamp,
                         document.data["EndTime"] as com.google.firebase.Timestamp,
                         document.data["Days"] as ArrayList<Boolean>,
