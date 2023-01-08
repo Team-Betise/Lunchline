@@ -14,30 +14,34 @@ import kotlin.Unit
 
 class SuccessfullPaymentActivity :
     BaseActivity<ActivitySuccessfullPaymentBinding>(R.layout.activity_successfull_payment) {
-  private val viewModel: SuccessfullPaymentVM by viewModels<SuccessfullPaymentVM>()
+    private val viewModel: SuccessfullPaymentVM by viewModels<SuccessfullPaymentVM>()
 
-  override fun onInitialized(): Unit {
-    viewModel.navArguments = intent.extras?.getBundle("bundle")
-    binding.successfullPaymentVM = viewModel
-  }
-
-  override fun setUpClicks(): Unit {
-    binding.imageArrowleft.setOnClickListener {
-      finish()
-    }
-    binding.btnOkay.setOnClickListener {
-      val destIntent = NotificationCompleteActivity.getIntent(this, null)
-      startActivity(destIntent)
-    }
-  }
-
-  companion object {
-    const val TAG: String = "SUCCESSFULL_PAYMENT_ACTIVITY"
-    fun getIntent(context: Context, bundle: Bundle?): Intent {
-      val destIntent = Intent(context, SuccessfullPaymentActivity::class.java)
-      destIntent.putExtra("bundle", bundle)
-      return destIntent
+    override fun onInitialized(): Unit {
+        buildOrder()
+        viewModel.navArguments = intent.extras?.getBundle("bundle")
+        binding.successfullPaymentVM = viewModel
     }
 
-  }
+    override fun setUpClicks(): Unit {
+        binding.imageArrowleft.setOnClickListener {
+            finish()
+        }
+        binding.btnOkay.setOnClickListener {
+            val destIntent = NotificationCompleteActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+    }
+
+    private fun buildOrder(): Unit {
+
+    }
+
+    companion object {
+        const val TAG: String = "SUCCESSFULL_PAYMENT_ACTIVITY"
+        fun getIntent(context: Context, bundle: Bundle?): Intent {
+            val destIntent = Intent(context, SuccessfullPaymentActivity::class.java)
+            destIntent.putExtra("bundle", bundle)
+            return destIntent
+        }
+    }
 }
