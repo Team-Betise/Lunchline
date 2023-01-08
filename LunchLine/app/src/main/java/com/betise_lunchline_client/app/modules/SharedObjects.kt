@@ -1,7 +1,6 @@
 package com.betise_lunchline_client.app.modules
 
 import android.annotation.SuppressLint
-import androidx.annotation.Keep
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.local.ReferenceSet
