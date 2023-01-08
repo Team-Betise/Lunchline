@@ -56,7 +56,7 @@ class SharedObjects {
         val menuCollection = db.collection("vendors").document("pqCOEjacUXj6r5KM7fEL").collection("menu")
         var dishes:MutableList<Dish> = mutableListOf<Dish>()
         var dish_ids:MutableList<String> = mutableListOf<String>()
-        var cart:HashMap<Dish, Int> = hashMapOf()
+        var cart:HashMap<Int, Int> = hashMapOf()
     }
 
 }

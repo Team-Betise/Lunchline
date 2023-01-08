@@ -63,6 +63,16 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             signInLauncher.launch(signInIntent)
 
         }
+    binding.txtLoginwithEmai.setOnClickListener{
+        signInLauncher.launch(signInIntent)
+
+      }
+//          AuthUI.getInstance()
+//        .createSignInIntentBuilder()
+//        .setAvailableProviders(providers)
+//        .setTheme(R.style.FuckingHell)
+//        .build()
+//      startA?ctivity(destIntent)
     }
 
 
@@ -131,6 +141,23 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
             destIntent.putExtra("bundle", bundle)
             return destIntent
         }
-    }
+  }
+//  private fun onSignInResult(result: FirebaseAuthUIAuthenticationResult) {
+//    val response: IdpResponse? = result.idpResponse
+//    if (result.resultCode == RESULT_OK) {
+//      // Successfully signed in
+//      val user: FirebaseUser? = FirebaseAuth.getInstance().currentUser
+//      val destIntent = HomePageActivity.getIntent(this,null)
+//      startActivity(destIntent)
+//
+//    } else {
+//      // Sign in failed. If response is null the user canceled the
+//      // sign-in flow using the back button. Otherwise check
+//      // response.getError().getErrorCode() and handle the error.
+//      // ...
+//      if (response != null) {
+//        response.error?.errorCode
+//      }
+//    }
 }
 
