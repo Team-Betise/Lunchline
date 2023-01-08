@@ -39,7 +39,7 @@ class Signup1TwoActivity : BaseActivity<ActivitySignup1TwoBinding>(R.layout.acti
     override fun setUpClicks(): Unit {
         binding.btnGetOtp.setOnClickListener {
             val phNo = findViewById<EditText>(R.id.etMobileNo)
-            phoneNo = phNo.text.toString()
+            phoneNo = "+91" + phNo.text.toString()
 
             val phoneOptions = phoneOptionsBuilder.setPhoneNumber("+91$phoneNo").build()
             PhoneAuthProvider.verifyPhoneNumber(phoneOptions)

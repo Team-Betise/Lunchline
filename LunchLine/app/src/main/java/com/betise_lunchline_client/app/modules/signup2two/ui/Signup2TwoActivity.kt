@@ -12,8 +12,10 @@ import com.betise_lunchline_client.app.databinding.ActivitySignup2TwoBinding
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.login.ui.LoginActivity
 import com.betise_lunchline_client.app.modules.signup2two.`data`.viewmodel.Signup2TwoVM
+import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
+import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
@@ -64,7 +66,7 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
         private lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
         private lateinit var storedVerificationId: String
         private val auth = Firebase.auth
-        private val credential = PhoneAuthProvider.getCredential("", "")
+
 
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
             // This callback will be invoked in two situations:
@@ -79,7 +81,7 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
 
         private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
             auth.signInWithCredential(credential)
-                .addOnCompleteListener(this) { task ->
+                .addOnCompleteListener(this) { task : Task<AuthResult> ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(LoginActivity.TAG, "signInWithCredential:success")
@@ -130,4 +132,8 @@ class Signup2TwoActivity : BaseActivity<ActivitySignup2TwoBinding>(R.layout.acti
 
 
     }
+}
+
+private fun <TResult> Task<TResult>.addOnCompleteListener(callbacks: Signup2TwoActivity.callbacks, function: (Task<TResult>) -> Unit) {
+
 }
