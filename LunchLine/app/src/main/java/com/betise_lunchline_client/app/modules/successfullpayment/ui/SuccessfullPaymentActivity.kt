@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivitySuccessfullPaymentBinding
+import com.betise_lunchline_client.app.modules.SharedObjects
 import com.betise_lunchline_client.app.modules.notificationcomplete.ui.NotificationCompleteActivity
 import com.betise_lunchline_client.app.modules.successfullpayment.`data`.viewmodel.SuccessfullPaymentVM
 import kotlin.String
@@ -15,6 +16,8 @@ import kotlin.Unit
 class SuccessfullPaymentActivity :
     BaseActivity<ActivitySuccessfullPaymentBinding>(R.layout.activity_successfull_payment) {
     private val viewModel: SuccessfullPaymentVM by viewModels<SuccessfullPaymentVM>()
+    private var items = ArrayList<SharedObjects.Item>()
+    private var itemsdb = ArrayList<SharedObjects.ItemDB>()
 
     override fun onInitialized(): Unit {
         buildOrder()
