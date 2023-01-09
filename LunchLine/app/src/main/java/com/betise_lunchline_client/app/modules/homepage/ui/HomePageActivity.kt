@@ -47,23 +47,23 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val dish = SharedObjects.Dish(
-                        document.data["ItemName"] as String,
-                        document.data["ItemCost"] as Long,
-                        document.data["Desc"] as String,
-                        document.data["CurrentAvailability"] as Boolean,
-                        document.data["Rating"] as Double,
-                        document.data["ReviewCount"] as Long,
-                        document.data["StartTime"] as Timestamp,
-                        document.data["EndTime"] as Timestamp,
-                        document.data["Days"] as ArrayList<Boolean>,
-                        document.data["ETA"] as Timestamp,
+                        document.data["itemName"] as String,
+                        document.data["itemCost"] as Long,
+                        document.data["desc"] as String,
+                        document.data["currentAvailability"] as Boolean,
+                        document.data["rating"] as Double,
+                        document.data["reviewCount"] as Long,
+                        document.data["startTime"] as Timestamp,
+                        document.data["endTime"] as Timestamp,
+                        document.data["days"] as ArrayList<Boolean>,
+                        document.data["eta"] as Timestamp,
                     )
                     dishes.add(dish)
                     println("Done till here")
                     SharedObjects.dish_ids.add(document.id)
                 }
                 println(dishes.size)
-                println(dishes[0].ItemName)
+                println(dishes[0].itemName)
             }
 //        val dish: SharedObjects.Dish = SharedObjects.Dish(
 //            "Chicken Biryani",
@@ -78,7 +78,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 //      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
             val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
             val textView: TextView = layout.findViewById(R.id.txtDishName)
-            textView.text = dishes[i].ItemName
+            textView.text = dishes[i].itemName
             val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
             addButton.setOnClickListener {
                 val destIntent = DishPageActivity.getIntent(this, null)

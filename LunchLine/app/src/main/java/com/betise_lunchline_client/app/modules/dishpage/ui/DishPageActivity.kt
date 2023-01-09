@@ -33,12 +33,12 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
         viewModel.navArguments = intent.extras?.getBundle("bundle")
         dishid = intent.getIntExtra("dishid", 0)
         binding.dishPageVM = viewModel
-        println(dishes[dishid].ItemName)
-        findViewById<LinearLayout>(R.id.linearDishpage).findViewById<TextView>(R.id.txtDishName).text = dishes[dishid].ItemName
+        println(dishes[dishid].itemName)
+        findViewById<LinearLayout>(R.id.linearDishpage).findViewById<TextView>(R.id.txtDishName).text = dishes[dishid].itemName
 //        val textView: TextView = findViewById(R.id.txtDishName)
 //        textView.text = dishes[dishid].ItemName
         val textView2: TextView = findViewById(R.id.txtSeventy)
-        textView2.text = dishes[dishid].ItemCost.toString()
+        textView2.text = dishes[dishid].itemCost.toString()
     }
 
     override fun setUpClicks(): Unit {
