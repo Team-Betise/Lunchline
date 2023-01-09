@@ -5,6 +5,7 @@ import com.google.firebase.Timestamp
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.local.ReferenceSet
 import com.google.firebase.ktx.Firebase
+import java.sql.Time
 
 class SharedObjects {
     data class User(
@@ -22,10 +23,11 @@ class SharedObjects {
         var CurrentAvailability: Boolean,
         var Rating: Double,
         var ReviewCount: Long,
-        var StartTime: Int,
-        var EndTime: Int,
+        var StartTime: Timestamp,
+        var EndTime: Timestamp,
         var Days: ArrayList<Boolean>,
-//        val ETA: Timestamp,
+
+        val ETA: Timestamp,
     )
     data class Item(
         val dish: Dish,
@@ -58,7 +60,7 @@ class SharedObjects {
         var dishes:MutableList<Dish> = mutableListOf<Dish>()
         var dish_ids:MutableList<String> = mutableListOf<String>()
         var cart:HashMap<Dish, Int> = hashMapOf()
-        var dishtest:MutableList<Dish> = mutableListOf<Dish>()
+//        var dishes:MutableList<Dish> = mutableListOf<Dish>()
     }
 
 }

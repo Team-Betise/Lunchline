@@ -15,7 +15,7 @@ import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityOrderRecievedBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
 import com.betise_lunchline_client.app.modules.SharedObjects.Companion.cart
-import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishtest
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishes
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.orderrecieved.`data`.viewmodel.OrderRecievedVM
@@ -42,8 +42,8 @@ class OrderRecievedActivity :
       val reviewBox: EditText = orderItemComponent.findViewById<EditText>(R.id.reviewInput)
       val itemImg: ImageView = orderItemComponent.findViewById<ImageView>(R.id.itemImageView)
 
-      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishtest[i].ItemName
-      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishtest[i].ItemCost.toString()
+      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishes[i].ItemName
+      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishes[i].ItemCost.toString()
 
       orderedItemsContainer.addView(orderItemComponent)
       }
