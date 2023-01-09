@@ -9,6 +9,8 @@ import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
 import com.betise_lunchline_client.app.databinding.ActivityOrderRecievedBinding
 import com.betise_lunchline_client.app.modules.SharedObjects
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.cart
+import com.betise_lunchline_client.app.modules.SharedObjects.Companion.dishes
 import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.ui.HomePageActivity
 import com.betise_lunchline_client.app.modules.orderrecieved.`data`.viewmodel.OrderRecievedVM
@@ -19,9 +21,26 @@ class OrderRecievedActivity :
     BaseActivity<ActivityOrderRecievedBinding>(R.layout.activity_order_recieved) {
     private val viewModel: OrderRecievedVM by viewModels<OrderRecievedVM>()
 
-    override fun onInitialized(): Unit {
-        viewModel.navArguments = intent.extras?.getBundle("bundle")
-        binding.orderRecievedVM = viewModel
+  override fun onInitialized(): Unit {
+    viewModel.navArguments = intent.extras?.getBundle("bundle")
+    binding.orderRecievedVM = viewModel
+
+    orderedItemsContainer = findViewById(R.id.order_done_items_container)
+    val inflater: android.view.LayoutInflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as
+            android.view.LayoutInflater
+
+    val orderedLength = 4
+    for (i in 0..cart.size-1) {
+      // Create the ordered item
+      val orderItemComponent: View = inflater.inflate(R.layout.order_received_component, null)
+      val reviewBox: EditText = orderItemComponent.findViewById<EditText>(R.id.reviewInput)
+      val itemImg: ImageView = orderItemComponent.findViewById<ImageView>(R.id.itemImageView)
+
+      orderItemComponent.findViewById<TextView>(R.id.itemName).text = dishes[i].ItemName
+      orderItemComponent.findViewById<TextView>(R.id.itemPrice).text = dishes[i].ItemCost.toString()
+
+      orderedItemsContainer.addView(orderItemComponent)
+      }
     }
 
     override fun setUpClicks(): Unit {

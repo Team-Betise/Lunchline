@@ -7,6 +7,7 @@ import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.local.ReferenceSet
 import com.google.firebase.ktx.Firebase
+import java.sql.Time
 
 class SharedObjects {
     data class User(
@@ -18,16 +19,16 @@ class SharedObjects {
         val OpenID: String,
     )
     data class Dish(
-        val ItemName: String,
-        val ItemCost: Long,
-        val Desc: String,
-        val CurrentAvailability: Boolean,
-        val Rating: Double,
-        val ReviewCount: Long,
-        val StartTime: Timestamp,
-        val EndTime: Timestamp,
-        val Days: ArrayList<Boolean>,
-        val ETA: Timestamp,
+        val itemName: String,
+        val itemCost: Long,
+        val desc: String,
+        val currentAvailability: Boolean,
+        val rating: Double,
+        val reviewCount: Long,
+        val startTime: Timestamp,
+        val endTime: Timestamp,
+        val days: ArrayList<Boolean>,
+        val eta: Timestamp,
     )
     data class Item(
         val dish: Dish,
@@ -64,7 +65,8 @@ class SharedObjects {
         val menuCollection = db.collection("vendors").document("pqCOEjacUXj6r5KM7fEL").collection("menu")
         var dishes:MutableList<Dish> = mutableListOf<Dish>()
         var dish_ids:MutableList<String> = mutableListOf<String>()
-        var cart:HashMap<Int, Int> = hashMapOf()
+        var cart:HashMap<Dish, Int> = hashMapOf()
+        // var cart:HashMap<Int, Int> = hashMapOf()
         var order: Order? = null
         var orderDB: OrderDB? = null
     }
