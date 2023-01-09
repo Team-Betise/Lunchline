@@ -78,220 +78,29 @@
                     android:layout_weight="1.0"
                     android:layout_width="0dp" android:orientation="vertical">
 
-                    <FrameLayout
-                        android:id="@+id/frameStackfooditem"
-                        android:layout_width="@dimen/_242pxh"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_10pxh">
 
-                        <LinearLayout
-                            android:id="@+id/linearRowpngeggninetynine"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginEnd="@dimen/_10pxh"
-                            android:orientation="horizontal">
-
-                            <FrameLayout
-                                android:id="@+id/frameStackpngeggninetynine"
-                                style="@style/groupStylewhite_1"
-                                android:layout_width="@dimen/_66pxh"
-                                android:layout_height="@dimen/_72pxv">
-
-                                <ImageView
-                                    android:id="@+id/image77325frappucci"
-                                    android:layout_width="59dp"
-                                    android:layout_height="@dimen/_53pxh"
-                                    android:layout_gravity="bottom|end"
-                                    android:layout_marginStart="@dimen/_5pxh"
-                                    android:layout_marginTop="@dimen/_10pxv"
-                                    android:layout_marginEnd="@dimen/_4pxh"
-                                    android:layout_marginBottom="@dimen/_4pxv"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/img_77325frappucci"
-                                    tools:ignore="ContentDescription"
-                                    tools:src="@drawable/img_77325frappucci" />
-
-                            </FrameLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearColumnfooditem"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_16pxh"
-                                android:layout_marginTop="@dimen/_5pxv"
-                                android:layout_marginBottom="@dimen/_32pxv"
-                                android:layout_weight="0.48"
-                                android:gravity="start"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/txtFoodItem"
-                                    style="@style/txtPoppinsmedium12"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:lineSpacingExtra="@dimen/_1pxh"
-                                    android:singleLine="true"
-                                    android:text="@{orderRecievedVM.orderRecievedModel.txtFoodItem}"
-                                    tools:text="@string/lbl_food_item" />
-
-                                <TextView
-                                    android:id="@+id/txtPrice"
-                                    style="@style/txtPoppinsmedium14"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5pxv"
-                                    android:layout_marginEnd="@dimen/_10pxh"
-                                    android:ellipsize="end"
-                                    android:lineSpacingExtra="@dimen/_1pxh"
-                                    android:singleLine="true"
-                                    android:text="@{orderRecievedVM.orderRecievedModel.txtPrice}"
-                                    tools:text="@string/lbl_35" />
-                            </LinearLayout>
-                        </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imageGroup48095563"
-                            android:layout_width="@dimen/_160pxh"
-                            android:layout_height="@dimen/_20pxh"
-                            android:layout_gravity="bottom|end"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_marginTop="@dimen/_10pxv"
-                            android:layout_marginBottom="@dimen/_7pxv"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_group48095563"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_group48095563" />
-                    </FrameLayout>
-                    <EditText
-                        android:background="@drawable/rectangle_bg_green_902_radius_14"
-                        android:ellipsize="end"
-                        android:hint="@string/msg_type_your_revie"
-                        android:id="@+id/etGroup48095566"
-                        android:inputType="text"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/_2pxh"
-                        android:layout_marginStart="@dimen/_3pxh"
-                        android:layout_marginTop="@dimen/_18pxv"
+                    <ScrollView
+                        android:id="@+id/scrollableContainer"
                         android:layout_width="match_parent"
-                        android:paddingBottom="@dimen/_30pxv"
-                        android:paddingEnd="@dimen/_30pxh"
-                        android:paddingStart="@dimen/_6pxh"
-                        android:paddingTop="@dimen/_5pxv"
-                        android:singleLine="true"
-                        android:text="@={orderRecievedVM.orderRecievedModel.etGroup48095566Value}"
-                        android:textColorHint="@color/white_A700"
-                        style="@style/etSolidRounded_3" tools:ignore="Autofill"/>
-
-                    <FrameLayout
-                        android:id="@+id/frameStackfooditemOne"
-                        android:layout_width="@dimen/_244pxh"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_1pxh"
-                        android:layout_marginTop="@dimen/_50pxv"
-                        android:layout_marginEnd="@dimen/_10pxh">
-
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="-140dp"
+                        android:layout_weight="1"
+                        android:clipToPadding="false"
+                        android:fillViewport="true"
+                        android:orientation="vertical">
                         <LinearLayout
-                            android:id="@+id/linearRowpngeggninetynineOne"
-                            android:layout_width="wrap_content"
+                            android:id="@+id/order_done_items_container"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="start"
-                            android:layout_marginEnd="@dimen/_10pxh"
-                            android:orientation="horizontal">
+                            android:orientation="vertical"
+                            android:gravity="start">
 
-                            <FrameLayout
-                                android:id="@+id/frameStackpngeggninetynineOne"
-                                style="@style/groupStylewhite_1"
-                                android:layout_width="@dimen/_66pxh"
-                                android:layout_height="@dimen/_72pxv">
-
-                                <ImageView
-                                    android:id="@+id/image77325frappucciOne"
-                                    android:layout_width="58dp"
-                                    android:layout_height="@dimen/_53pxh"
-                                    android:layout_gravity="bottom|end"
-                                    android:layout_marginStart="@dimen/_10pxh"
-                                    android:layout_marginTop="@dimen/_10pxv"
-                                    android:layout_marginEnd="@dimen/_4pxh"
-                                    android:layout_marginBottom="@dimen/_4pxv"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/img_77325frappucci"
-                                    tools:ignore="ContentDescription"
-                                    tools:src="@drawable/img_77325frappucci" />
-
-                            </FrameLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linearColumnfooditemOne"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/_16pxh"
-                                android:layout_marginTop="@dimen/_5pxv"
-                                android:layout_marginBottom="@dimen/_32pxv"
-                                android:layout_weight="0.48"
-                                android:gravity="start"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/txtFoodItemOne"
-                                    style="@style/txtPoppinsmedium12"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:ellipsize="end"
-                                    android:lineSpacingExtra="@dimen/_1pxh"
-                                    android:singleLine="true"
-                                    android:text="@{orderRecievedVM.orderRecievedModel.txtFoodItemOne}"
-                                    tools:text="@string/lbl_food_item" />
-
-                                <TextView
-                                    android:id="@+id/txtPriceOne"
-                                    style="@style/txtPoppinsmedium14"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="@dimen/_5pxv"
-                                    android:layout_marginEnd="@dimen/_10pxh"
-                                    android:ellipsize="end"
-                                    android:lineSpacingExtra="@dimen/_1pxh"
-                                    android:singleLine="true"
-                                    android:text="@{orderRecievedVM.orderRecievedModel.txtPriceOne}"
-                                    tools:text="@string/lbl_35" />
-                            </LinearLayout>
+                            <!--                            <include layout="@layout/order_received_component" />-->
+                            <!--                            <include layout="@layout/order_received_component" />-->
+                            <!--                            <include layout="@layout/order_received_component" />-->
+                            <!--                            <include layout="@layout/order_received_component" />-->
                         </LinearLayout>
-
-                        <ImageView
-                            android:id="@+id/imageGroup48095567"
-                            android:layout_width="@dimen/_160pxh"
-                            android:layout_height="@dimen/_20pxh"
-                            android:layout_gravity="bottom|end"
-                            android:layout_marginStart="@dimen/_10pxh"
-                            android:layout_marginTop="@dimen/_10pxv"
-                            android:layout_marginBottom="@dimen/_7pxv"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/img_group48095563"
-                            tools:ignore="ContentDescription"
-                            tools:src="@drawable/img_group48095563" />
-                    </FrameLayout>
-
-                    <EditText
-                        android:background="@drawable/rectangle_bg_green_902_radius_14"
-                        android:ellipsize="end"
-                        android:hint="@string/msg_type_your_revie"
-                        android:id="@+id/etGroup48095568"
-                        android:inputType="text"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_5pxh"
-                        android:layout_marginTop="@dimen/_18pxv"
-                        android:layout_width="match_parent"
-                        android:paddingBottom="@dimen/_30pxv"
-                        android:paddingEnd="@dimen/_30pxh"
-                        android:paddingStart="@dimen/_6pxh"
-                        android:paddingTop="@dimen/_5pxv"
-                        android:singleLine="true"
-                        android:text="@={orderRecievedVM.orderRecievedModel.etGroup48095568Value}"
-                        android:textColorHint="@color/white_A700"
-                        style="@style/etSolidRounded_3" tools:ignore="Autofill"/>
-
+                    </ScrollView>
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnGoToHome"
                         style="@style/btnSolidRounded_1"
