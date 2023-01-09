@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import com.betise_lunchline_client.app.R
@@ -37,8 +38,12 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
         findViewById<LinearLayout>(R.id.linearDishpage).findViewById<TextView>(R.id.txtDishName).text = dishes[dishid].itemName
 //        val textView: TextView = findViewById(R.id.txtDishName)
 //        textView.text = dishes[dishid].itemName
-        val textView2: TextView = findViewById(R.id.txtSeventy)
-        textView2.text = dishes[dishid].itemCost.toString()
+        Toast.makeText(this, dishes[dishid].itemName, Toast.LENGTH_SHORT).show()
+        val textView: TextView = findViewById(R.id.etLongtextbox)
+        Toast.makeText(this, dishes[dishid].desc, Toast.LENGTH_SHORT).show()
+        textView.text = dishes[dishid].desc
+//        val textView2: TextView = findViewById<LinearLayout>(R.id.linearDishpage).findViewById(R.id.txtDishPrice)
+//        textView2.text = dishes[dishid].itemCost.toString()
     }
 
     override fun setUpClicks(): Unit {
@@ -57,6 +62,13 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
 //      increase txtquantity by 1
             textView.text = (textView.text.toString().toInt() - 1).toString()
             quantity = textView.text.toString().toInt()
+            val t: TextView = findViewById(R.id.etLongtextbox)
+            Toast.makeText(this, dishes[dishid].desc, Toast.LENGTH_SHORT).show()
+            t.text = dishes[dishid].desc
+            findViewById<LinearLayout>(R.id.linearDishpage).findViewById<TextView>(R.id.txtDishName).text = dishes[dishid].itemName
+
+
+
         }
         binding.btnThree.setOnClickListener {
             val textView: TextView = findViewById(R.id.txtTwo)

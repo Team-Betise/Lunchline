@@ -60,33 +60,49 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
                         document.data["eta"] as Timestamp,
                     )
                     SharedObjects.dishes.add(dish)
-                    println(dishes[0].itemName)
+                    Toast.makeText(this, dishes[0].itemName, Toast.LENGTH_SHORT).show()
                     SharedObjects.dish_ids.add(document.id)
+                    for (i in 0..dishes.size - 1) {
+                        val dishComponent: View = inflater.inflate(R.layout.dish_component, null)
+                        val layout: LinearLayout =
+                            dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
+                        val textView: TextView = layout.findViewById(R.id.txtDishName)
+                        textView.text = dishes[i].itemName
+                        val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
+                        addButton.setOnClickListener {
+                            val destIntent = DishPageActivity.getIntent(this, null)
+                            destIntent.putExtra("dishid", i)
+                            startActivity(destIntent)
+                        }
+                        linearHomePage.addView(dishComponent)
+                    }
+
                 }
-            }
-//        val dish: SharedObjects.Dish = SharedObjects.Dish(
+//        val dish = SharedObjects.Dish(
 //            "Chicken Biryani",
 //            100,
-//            "Chicken Biryani",true,4.5,100,0,0, arrayOf(true,true,true,true,true,true,true).toCollection(ArrayList()))
+//            "Chicken Biryani",true,4.5,100,com.google.firebase.Timestamp(((6*60+10)*60).toLong(),0), arrayOf(true,true,true,true,true,true,true).toCollection(ArrayList()))
+//        val dish = SharedObjects.Dish("chicken briyani",100,"tasty",true,0.00,0,com.google.firebase.Timestamp(((6*60+10)*60).toLong(), 0), com.google.firebase.Timestamp(((1*60+30)*60).toLong(), 0),arrayOf(true,true,true,true,true,true,true).toCollection(ArrayList()),com.google.firebase.Timestamp(((1*60+30)*60).toLong(), 0))
 //        dishes.add(dish)
 //        println(dishes)
         // Grab a reference to the component defined in dish_component.xml
-        println(dishes.size)
-        for (i in 0..dishes.size-1) {
-            val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
-//      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
-            val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
-            val textView: TextView = layout.findViewById(R.id.txtDishName)
-            textView.text = dishes[i].itemName
-            val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
-            addButton.setOnClickListener {
-                val destIntent = DishPageActivity.getIntent(this, null)
-                destIntent.putExtra("dishid", i)
-                startActivity(destIntent)
-            }
+
+        Toast.makeText(this, "Dishes", Toast.LENGTH_SHORT).show()
+//        for (i in 0..dishes.size-1) {
+//            val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
+////      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
+//            val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
+//            val textView: TextView = layout.findViewById(R.id.txtDishName)
+//            textView.text = dishes[i].itemName
+//            val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
+//            addButton.setOnClickListener {
+//                val destIntent = DishPageActivity.getIntent(this, null)
+//                destIntent.putExtra("dishid", i)
+//                startActivity(destIntent)
+//            }
 
 //            textView.text = "Dish #$i"
-            linearHomePage.addView(dishComponent)
+//            linearHomePage.addView(dishComponent)
         }
     }
 
