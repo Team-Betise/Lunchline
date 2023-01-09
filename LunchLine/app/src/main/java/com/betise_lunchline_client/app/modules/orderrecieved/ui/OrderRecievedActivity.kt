@@ -64,13 +64,13 @@ class OrderRecievedActivity :
 
     private fun rateDish(dish:SharedObjects.Dish, rating: Int): Unit {
         SharedObjects.menuCollection
-            .whereEqualTo("ItemName", dish.ItemName)
+            .whereEqualTo("ItemName", dish.itemName)
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
-                    val newRating = dish.Rating*(dish.ReviewCount/(dish.ReviewCount + 1)) + (rating.toDouble())/(dish.ReviewCount + 1)
+                    val newRating = dish.rating*(dish.reviewCount/(dish.reviewCount + 1)) + (rating.toDouble())/(dish.reviewCount + 1)
                     SharedObjects.menuCollection.document(document.id).update("Rating", newRating)
-                    SharedObjects.menuCollection.document(document.id).update("ReviewCount", dish.ReviewCount + 1)
+                    SharedObjects.menuCollection.document(document.id).update("ReviewCount", dish.reviewCount + 1)
                 }
             }
     }
