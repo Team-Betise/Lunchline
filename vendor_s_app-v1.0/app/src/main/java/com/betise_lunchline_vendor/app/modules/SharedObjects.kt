@@ -9,16 +9,16 @@ import com.google.firebase.firestore.local.ReferenceSet
 
 class SharedObjects {
     data class Dish(
-        val ItemName: String,
-        val ItemCost: Long,
-        val Desc: String,
-        val CurrentAvailability: Boolean,
-        val Rating: Double,
-        val ReviewCount: Long,
-        val StartTime: Timestamp,
-        val EndTime: Timestamp,
-        val Days: ArrayList<Boolean>,
-        val ETA: Long,
+        val itemName: String,
+        val itemCost: Long,
+        val desc: String,
+        val currentAvailability: Boolean,
+        val rating: Double,
+        val reviewCount: Long,
+        val startTime: Timestamp,
+        val endTime: Timestamp,
+        val days: ArrayList<Boolean>,
+        val eta: Timestamp,
     )
     companion object{
         @SuppressLint("StaticFieldLeak")
