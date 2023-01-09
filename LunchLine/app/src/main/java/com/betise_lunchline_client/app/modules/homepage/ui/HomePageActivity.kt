@@ -21,6 +21,7 @@ import com.betise_lunchline_client.app.modules.dishpage.ui.DishPageActivity
 import com.betise_lunchline_client.app.modules.homepage.`data`.viewmodel.HomePageVM
 import com.betise_lunchline_client.app.modules.profilepage.ui.ProfilePageActivity
 import com.google.firebase.Timestamp
+import java.sql.Time
 import kotlin.Boolean
 import kotlin.String
 import kotlin.Unit
@@ -47,23 +48,21 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val dish = SharedObjects.Dish(
-                        document.data["ItemName"] as String,
-                        document.data["ItemCost"] as Long,
-                        document.data["Desc"] as String,
-                        document.data["CurrentAvailability"] as Boolean,
-                        document.data["Rating"] as Double,
-                        document.data["ReviewCount"] as Long,
-                        document.data["StartTime"] as Timestamp,
-                        document.data["EndTime"] as Timestamp,
-                        document.data["Days"] as ArrayList<Boolean>,
-                        document.data["ETA"] as Timestamp,
+                        document.data["itemName"] as String,
+                        document.data["itemCost"] as Long,
+                        document.data["desc"] as String,
+                        document.data["currentAvailability"] as Boolean,
+                        document.data["rating"] as Double,
+                        document.data["reviewCount"] as Long,
+                        document.data["startTime"] as com.google.firebase.Timestamp,
+                        document.data["endTime"] as com.google.firebase.Timestamp,
+                        document.data["days"] as ArrayList<Boolean>,
+                        document.data["eta"] as Timestamp,
                     )
-                    dishes.add(dish)
-                    println("Done till here")
+                    SharedObjects.dishes.add(dish)
+                    println(dishes[0].itemName)
                     SharedObjects.dish_ids.add(document.id)
                 }
-                println(dishes.size)
-                println(dishes[0].ItemName)
             }
 //        val dish: SharedObjects.Dish = SharedObjects.Dish(
 //            "Chicken Biryani",
@@ -72,13 +71,13 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 //        dishes.add(dish)
 //        println(dishes)
         // Grab a reference to the component defined in dish_component.xml
-
-        for (i in 0 until 2) {
+        println(dishes.size)
+        for (i in 0..dishes.size-1) {
             val dishComponent : View = inflater.inflate(R.layout.dish_component, null)
 //      val view : View = inflater.inflate(R.layout.dish_component, dishComponent, false)
             val layout: LinearLayout = dishComponent.findViewById<LinearLayout>(R.id.linearColumndishname)
             val textView: TextView = layout.findViewById(R.id.txtDishName)
-            textView.text = dishes[i].ItemName
+            textView.text = dishes[i].itemName
             val addButton: AppCompatButton = layout.findViewById(R.id.btnAdd)
             addButton.setOnClickListener {
                 val destIntent = DishPageActivity.getIntent(this, null)
@@ -87,7 +86,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
             }
 
 //            textView.text = "Dish #$i"
-//            linearHomePage.addView(dishComponent)
+            linearHomePage.addView(dishComponent)
         }
     }
 

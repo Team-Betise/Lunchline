@@ -25,6 +25,7 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
   private lateinit var cartItemsContainer : LinearLayout
   var totalprice = 0
 
+
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.cartVM = viewModel
@@ -40,8 +41,8 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
       val cartItemData : LinearLayout = cartItem.findViewById<LinearLayout>(R.id.itemDataContainer)
 
       // Set the item name, price, quantity
-      cartItemData.findViewById<TextView>(R.id.itemName).text = dishes[i].ItemName // Item name
-      cartItemData.findViewById<TextView>(R.id.itemPrice).text = dishes[i].ItemCost.toString() // Item price
+      cartItemData.findViewById<TextView>(R.id.itemName).text = dishes[i].itemName // Item name
+      cartItemData.findViewById<TextView>(R.id.itemPrice).text = dishes[i].itemCost.toString() // Item price
       cartItemData.findViewById<LinearLayout>(R.id.linearRowfour).findViewById<TextView>(R.id.itemQuantity).text =
         cart.get(dishes[i]).toString() // Item quantity
 
@@ -50,7 +51,7 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
 //        cartItemsContainer.removeView(cartItem)
 //      }
       for (i in 0..cart.size - 1) {
-        totalprice += dishes[i].ItemCost.toInt() * cart.get(dishes[i])!!
+        totalprice += dishes[i].itemCost.toInt() * cart.get(dishes[i])!!
       }
 //      change R.id.txt1000 to total price
 //      check path of R.id.txt1000 in cartitemData

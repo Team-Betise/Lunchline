@@ -102,8 +102,8 @@ class ProfilePageActivity : BaseActivity<ActivityProfilePageBinding>(R.layout.ac
                                         // change document to result otherwise error
                                         Toast.makeText(this, "Found a dish", Toast.LENGTH_SHORT).show()
 //                                        dish = SharedObjects.Dish(
-//                                            result.data["ItemName"] as String,
-//                                            document.data["ItemCost"] as Long,
+//                                            result.data["itemName"] as String,
+//                                            document.data["itemCost"] as Long,
 //                                            document.data["Desc"] as String,
 //                                            document.data["CurrentAvailability"] as Boolean,
 //                                            document.data["Rating"] as Double,
