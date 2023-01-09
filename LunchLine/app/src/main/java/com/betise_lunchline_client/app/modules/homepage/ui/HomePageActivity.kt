@@ -70,7 +70,7 @@ class HomePageActivity : BaseActivity<ActivityHomePageBinding>(R.layout.activity
 //            100,
 //            "Chicken Biryani",true,4.5,100,0,0, arrayOf(true,true,true,true,true,true,true).toCollection(ArrayList()))
 //        dishes.add(dish)
-//        println(dishes)
+        println(dishes)
         // Grab a reference to the component defined in dish_component.xml
 
         for (i in 0 until 2) {

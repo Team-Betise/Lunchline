@@ -58,12 +58,12 @@ class SuccessfullPaymentActivity :
 
     // Fix endTime
     private fun buildItem(Idx: Int, timePlaced: Timestamp): Long {
-        var endTime = Timestamp(timePlaced.seconds + SharedObjects.dishes[Idx].ETA.seconds, 0)
+        var endTime = Timestamp(timePlaced.seconds + SharedObjects.dishes[Idx].eta.seconds, 0)
         val item = SharedObjects.Item(SharedObjects.dishes[Idx], endTime, "Cooking")
         items.add(item)
         val itemdb = SharedObjects.ItemDB(SharedObjects.menuCollection.document(SharedObjects.dish_ids[Idx]), endTime, "Cooking")
         itemsdb.add(itemdb)
-        return SharedObjects.dishes[Idx].ItemCost
+        return SharedObjects.dishes[Idx].itemCost
     }
 
     companion object {
