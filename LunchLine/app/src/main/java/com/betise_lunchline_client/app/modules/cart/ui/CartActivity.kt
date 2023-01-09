@@ -25,7 +25,6 @@ class CartActivity : BaseActivity<ActivityCartBinding>(R.layout.activity_cart) {
   private lateinit var cartItemsContainer : LinearLayout
   var totalprice = 0
 
-
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
     binding.cartVM = viewModel

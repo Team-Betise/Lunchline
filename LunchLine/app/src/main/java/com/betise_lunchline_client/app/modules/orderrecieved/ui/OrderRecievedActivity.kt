@@ -4,11 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.media.Rating
 import android.os.Bundle
-import android.view.View
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.activity.viewModels
 import com.betise_lunchline_client.app.R
 import com.betise_lunchline_client.app.appcomponents.base.BaseActivity
@@ -24,8 +19,7 @@ import kotlin.Unit
 
 class OrderRecievedActivity :
     BaseActivity<ActivityOrderRecievedBinding>(R.layout.activity_order_recieved) {
-  private val viewModel: OrderRecievedVM by viewModels<OrderRecievedVM>()
-  private lateinit var orderedItemsContainer : LinearLayout
+    private val viewModel: OrderRecievedVM by viewModels<OrderRecievedVM>()
 
   override fun onInitialized(): Unit {
     viewModel.navArguments = intent.extras?.getBundle("bundle")
@@ -49,20 +43,20 @@ class OrderRecievedActivity :
       }
     }
 
-  override fun setUpClicks(): Unit {
-//    binding.linearRowpngeggninetynineOne.setOnClickListener {
-//      val destIntent = DishPageActivity.getIntent(this, null)
-//      startActivity(destIntent)
-//    }
-    binding.btnGoToHome.setOnClickListener {
-      val destIntent = HomePageActivity.getIntent(this, null)
-      startActivity(destIntent)
+    override fun setUpClicks(): Unit {
+        binding.linearRowpngeggninetynineOne.setOnClickListener {
+            val destIntent = DishPageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+        binding.btnGoToHome.setOnClickListener {
+            val destIntent = HomePageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
+        binding.linearRowpngeggninetynine.setOnClickListener {
+            val destIntent = DishPageActivity.getIntent(this, null)
+            startActivity(destIntent)
+        }
     }
-//    binding.linearRowpngeggninetynine.setOnClickListener {
-//      val destIntent = DishPageActivity.getIntent(this, null)
-//      startActivity(destIntent)
-//    }
-  }
 
     private fun rateDish(dish:SharedObjects.Dish, rating: Int): Unit {
         SharedObjects.menuCollection

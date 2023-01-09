@@ -34,5 +34,10 @@ class DishPageActivity : BaseActivity<ActivityDishPageBinding>(R.layout.activity
       destIntent.putExtra("bundle", bundle)
       return destIntent
     }
+
+    fun setfieldvals(): Unit {
+//      TODO("Not yet implemented")
+    }
   }
+
 }
